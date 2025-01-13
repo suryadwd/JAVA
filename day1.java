@@ -59,14 +59,23 @@ class day1 {
   //   sc.close();
   // }
 
-  public static void main(String[] args) {
-    System.out.println("learning the modulus operator");
-    System.out.println("Enter any two number it will give the remainder using modulus operator");
-    Scanner sc = new Scanner(System.in);
-    int a = sc.nextInt();
-    int b = sc.nextInt();
-    System.out.println(a%b);
-    sc.close();
-  }
+  // public static void main(String[] args) {
+  //   System.out.println("learning the modulus operator");
+  //   System.out.println("Enter any two number it will give the remainder using modulus operator");
+  //   Scanner sc = new Scanner(System.in);
+  //   int a = sc.nextInt();
+  //   int b = sc.nextInt();
+  //   System.out.println(a%b);
+  //   sc.close();
+  // }
+
+  // public static void main(String[] args) {
+  //   System.out.println("enter the number: ");
+  //   Scanner sc = new Scanner(System.in);
+  //   int x = sc.nextInt();
+  //   double y = (double)x/2;
+  //   System.out.println(y);
+  //   sc.close();
+  // }
 
 }
