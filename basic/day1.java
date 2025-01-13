@@ -96,22 +96,22 @@ class day1 {
   //   sc.close();
   // }
 
-  // public static void main(String[] args) {
-  //   System.out.println("Learning Ascii values");
-  //   System.out.println("Enter charcter and ascii value will be printed");
-  //   Scanner sc = new Scanner(System.in);
-  //   char ch = sc.next().charAt(0);
-  //   int a = ch;  
-  //   System.out.println(a);
-  //   sc.close();
-  // }
-
   public static void main(String[] args) {
-    int x = 5;
-    x++;
-    System.out.println(x);
-    ++x;
-    System.out.println(x);
+    System.out.println("Learning Ascii values");
+    System.out.println("Enter charcter and ascii value will be printed");
+    Scanner sc = new Scanner(System.in);
+    char ch = sc.next().charAt(0);
+    int a = ch;  
+    System.out.println(a);
+    sc.close();
   }
+
+  // public static void main(String[] args) {
+  //   int x = 5;
+  //   x++;
+  //   System.out.println(x);
+  //   ++x;
+  //   System.out.println(x);
+  // }
 
 }
