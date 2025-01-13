@@ -78,4 +78,31 @@ class day1 {
   //   sc.close();
   // }
 
+  // public static void main(String[] args) {
+  //   //basically follows the boadmas but in the case of same power the 
+  //   //start from left to right
+  //   int i = 2*3/4;
+  //   System.out.println(i);
+  // }
+
+  // public static void main(String[] args) {
+  //   System.out.println("Learning Ascii values");
+  //   System.out.println("Enter number and ascii value will be printed");
+  //   Scanner sc = new Scanner(System.in);
+  //   int a = sc.nextInt();
+  //   char ch = (char) a;   
+  //   System.out.println(ch);
+  //   sc.close();
+  // }
+
+  // public static void main(String[] args) {
+  //   System.out.println("Learning Ascii values");
+  //   System.out.println("Enter charcter and ascii value will be printed");
+  //   Scanner sc = new Scanner(System.in);
+  //   char ch = sc.next().charAt(0);
+  //   int a = ch;  
+  //   System.out.println(a);
+  //   sc.close();
+  // }
+
 }
