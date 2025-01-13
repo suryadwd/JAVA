@@ -71,4 +71,76 @@ public class day1Cond {
   //   sc.close();
   // }
 
+  
+  // public static int Greatest(int a, int b, int c){
+  //   int ans;
+  //   if(a>b && a>c) ans = a;
+  //   else if(c>b && c>a) ans = c;
+  //   else ans = b;
+  //   return ans;
+  // }
+
+  // public static void main(String[] args) {
+  //   Scanner sc = new Scanner(System.in);
+  //   System.out.println("Enter three number to get the greatest in them");
+  //   int a = sc.nextInt();
+  //   int b = sc.nextInt();
+  //   int c = sc.nextInt();
+  //   int res = Greatest(a,b,c);
+  //   System.out.println(res);
+  //   sc.close();
+  // }
+
+  // public static int Smallest(int a, int b, int c){
+  //   int ans;
+  //   if(a<b && a<c) ans = a;
+  //   else if(c<b && c<a) ans = c;
+  //   else ans = b;
+  //   return ans;
+  // }
+
+  // public static void main(String[] args) {
+  //   Scanner sc = new Scanner(System.in);
+  //   System.out.println("Enter three number to get the Smallest in them");
+  //   int a = sc.nextInt();
+  //   int b = sc.nextInt();
+  //   int c = sc.nextInt();
+  //   int res = Smallest(a,b,c);
+  //   System.out.println(res);
+  //   sc.close();
+  // }
+
+  // public static int Smallest(int a, int b){
+  //   int ans =  (a<b) ? a : b;
+  //   return ans;
+  // }
+
+  // public static void main(String[] args) {
+  //   System.out.println("learning ternary operator");
+  //   Scanner sc = new Scanner(System.in);
+  //   System.out.println("enter two numbers: ");
+  //   int a = sc.nextInt();
+  //   int b = sc.nextInt();
+  //   int res = Smallest(a,b);
+  //   System.out.println(res);
+
+  //   sc.close();
+  // }
+
+  public static boolean LeapCheck(int num){
+    boolean ans;
+    if(num % 4 == 0 && (num % 100 != 0 || num % 400 == 0)) ans = true;
+    else ans = false;
+    return ans;
+  }
+
+  public static void main(String[] args) {
+    System.out.println("leap year checker");
+    Scanner sc = new Scanner(System.in);
+    int year = sc.nextInt();
+   boolean res = LeapCheck(year);
+    System.out.println(res);
+    sc.close();
+  }
+
 }
