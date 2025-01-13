@@ -1,3 +1,4 @@
+package basic;
 // to run any program just perform this first
 // javac day1.java
 // java day1.java
@@ -104,5 +105,13 @@ class day1 {
   //   System.out.println(a);
   //   sc.close();
   // }
+
+  public static void main(String[] args) {
+    int x = 5;
+    x++;
+    System.out.println(x);
+    ++x;
+    System.out.println(x);
+  }
 
 }
