@@ -31,17 +31,42 @@ class day1 {
   //   System.out.println(x/y);
   // }
 
-  public static void main(String[] args) {
+  // public static void main(String[] args) {
     
+  //   Scanner sc = new Scanner(System.in);
+
+  //   System.out.println("Printing the area using user input: ");
+  //   int x = sc.nextInt();
+
+  //   System.out.println("area of circle is: "+(x*3.14*x));
+
+  //   sc.close();
+
+  // }
+
+
+  // public static void main(String[] args) {
+  //   System.out.println("Calculating simple Interset: ");
+  //   Scanner sc = new Scanner(System.in);
+  //   System.out.println("Enter the value of p r t: ");
+  //   double p = sc.nextDouble();
+  //   double r = sc.nextDouble();
+  //   double t = sc.nextDouble();
+
+  //   double si = (p*r*t)/100;
+
+  //   System.out.println("SI: " + si);
+  //   sc.close();
+  // }
+
+  public static void main(String[] args) {
+    System.out.println("learning the modulus operator");
+    System.out.println("Enter any two number it will give the remainder using modulus operator");
     Scanner sc = new Scanner(System.in);
-
-    System.out.println("Printing the area using user input: ");
-    int x = sc.nextInt();
-
-    System.out.println("area of circle is: "+(x*3.14*x));
-
+    int a = sc.nextInt();
+    int b = sc.nextInt();
+    System.out.println(a%b);
     sc.close();
-
   }
 
 }
