@@ -201,25 +201,72 @@ public class day1Cond {
   // sc.close();
   // }
 
-  public static void Prime(int n) {
-    int count = 0;
-    for (int i = 2; i < n; i++) {
-      if (n % i == 0)
-        count++;
-    }
+  // public static void Prime(int n) {
+  // int count = 0;
+  // for (int i = 2; i < n; i++) {
+  // if (n % i == 0)
+  // count++;
+  // }
 
-    if (count > 0) {
-      System.out.println("Not a prime");
-    } else {
-      System.out.println("Prime");
-    }
+  // if (count > 0) {
+  // System.out.println("Not a prime");
+  // } else {
+  // System.out.println("Prime");
+  // }
 
+  // }
+
+  // public static void main(String[] args) {
+  // Scanner sc = new Scanner(System.in);
+  // int a = sc.nextInt();
+  // Prime(a);
+  // sc.close();
+  // }
+
+  // public static void BreakUse(int n){
+  // for(int i = 1; i <= n; i++){
+  // if(i == 5) break;
+  // else System.out.println(i);
+  // }
+  // }
+
+  // public static void main(String[] args) {
+  // Scanner sc = new Scanner(System.in);
+  // int a = sc.nextInt();
+  // BreakUse(a);
+  // sc.close();
+  // }
+
+  // public static void DigitAdder(int n) {
+  //   int b = n;
+  //   int sum = 0;
+
+  //   while (b > 0) {
+  //     int digit = b % 10;
+  //     sum = sum + digit;
+  //     b = b / 10;
+  //   }
+  //   System.out.println(sum);
+  // }
+
+  // public static void main(String[] args) {
+  //   Scanner sc = new Scanner(System.in);
+  //   int a = sc.nextInt();
+  //   DigitAdder(a);
+  //   sc.close();
+  // }
+
+  public static int Fibo(int n){
+    if (n==0) return 0;
+    if (n == 1) return 1;
+    return Fibo(n-1)+Fibo(n-2);
   }
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int a = sc.nextInt();
-    Prime(a);
+    int res = Fibo(a);
+    System.out.println(res);
     sc.close();
   }
 
