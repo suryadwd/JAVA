@@ -217,30 +217,74 @@ public class day2 {
 
   // 6 -> Two sum element in array
 
-  public static void TwoSum(int[] c, int target) {
+  // public static void TwoSum(int[] c, int target) {
 
-    for (int i = 0; i < c.length; i++) {
-      for (int j = i + 1; j < c.length; j++) {
-        if (c[i] + c[j] == target)
-          System.out.println(c[i] + " " + c[j]);
-      }
-    }
+  //   for (int i = 0; i < c.length; i++) {
+  //     for (int j = i + 1; j < c.length; j++) {
+  //       if (c[i] + c[j] == target)
+  //         System.out.println(c[i] + " " + c[j]);
+  //     }
+  //   }
 
+  // }
+
+  // public static void main(String[] args) {
+  //   Scanner sc = new Scanner(System.in);
+  //   int n = sc.nextInt();
+  //   int arr[] = new int[n];
+
+  //   for (int i = 0; i < arr.length; i++)
+  //     arr[i] = sc.nextInt();
+
+  //   int target = sc.nextInt();
+
+  //   TwoSum(arr, target);
+
+  //   sc.close();
+  // }
+
+//   public static void Print(String name, String date){
+//     System.out.println("Hi "+name+",");
+//     System.out.println("Just a reminder: Your next renewal is on "+date+".");
+//     System.out.println("Don't forget to renew!");
+// }
+
+// public static void main (String [] args){
+    
+//     String name, data;
+//     Scanner sc = new Scanner(System.in);
+//     name = sc.next();
+//     data = sc.next();
+//     Print(name, data);
+// }
+
+
+public static void Reverse (int [] num){
+  int low = 0, high = num.length - 1;
+
+  while (low < high) {
+    int temp = num[low];
+    num[low] = num[high];
+    num[high] = temp;
+    low++;
+    high--;
   }
 
-  public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    int n = sc.nextInt();
-    int arr[] = new int[n];
+  for(int ele: num) System.out.print(ele+" ");
 
-    for (int i = 0; i < arr.length; i++)
-      arr[i] = sc.nextInt();
+}
 
-    int target = sc.nextInt();
+public static void main (String [] args){
+  Scanner sc = new Scanner(System.in);
+  System.out.print("Enter length: ");
+  int n = sc.nextInt();
+  int arr[] = new int[n];
+  for(int i = 0; i < arr.length; i++) arr[i] = sc.nextInt();
+  for(int ele: arr) System.out.print(ele+" ");
+  System.out.println();
+  Reverse(arr);
 
-    TwoSum(arr, target);
-
-    sc.close();
-  }
-
+  sc.close();
+}
+  
 }
