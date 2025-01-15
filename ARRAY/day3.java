@@ -149,36 +149,79 @@ public class day3 {
   // }
 
 
-  public static void Reverse(int []num, int low, int high){
-    while(low <= high){
-      int temp = num[low];
-      num[low] = num[high];
-      num[high] = temp;
-      low++;
-      high--;
-    }
-  }
+  // public static void Reverse(int []num, int low, int high){
+  //   while(low <= high){
+  //     int temp = num[low];
+  //     num[low] = num[high];
+  //     num[high] = temp;
+  //     low++;
+  //     high--;
+  //   }
+  // }
 
-  public static void RotateArray(int []num, int rotate){
-    Reverse(num, 0, num.length-1);
-    Reverse(num, 0, rotate-1);
-    Reverse(num, rotate, num.length-1);
-    for (int i : num) System.out.print(i+" ");
-  }
+  // public static void RotateArray(int []num, int rotate){
+  //   Reverse(num, 0, num.length-1);
+  //   Reverse(num, 0, rotate-1);
+  //   Reverse(num, rotate, num.length-1);
+  //   for (int i : num) System.out.print(i+" ");
+  // }
   
+  // public static void main(String[] args) {
+  //   Scanner sc = new Scanner(System.in);
+  //   System.out.print("Enter length: ");
+  //   int n = sc.nextInt();
+  //   int arr[] = new int[n];
+  //   System.out.print("Enter array: ");
+  //   for (int i = 0; i < arr.length; i++)
+  //     arr[i] = sc.nextInt();
+  //   System.out.print("Rotate array no: ");
+  //   int r = sc.nextInt();
+  //   RotateArray(arr, r);
+  //   sc.close();
+  // }
+
+  // public static void BubleSortArray(int [] num) {
+    
+  //   for(int i= 0; i < num.length; i++){
+  //     for(int j= 0; j < num.length - i - 1; j++){
+  //       if(num[j]>num[j+1]){
+  //        int temp = num[j];
+  //        num[j] = num[j+1];
+  //        num[j+1] = temp;
+  //       }
+  //     }
+  //   }
+  //   for (int i : num) {
+  //     System.out.print(i+" ");
+  //   }
+  // }
+
+  // public static void main(String[] args) {
+  //   Scanner sc = new Scanner(System.in);
+  //   System.out.print("Enter length: ");
+  //   int n = sc.nextInt();
+  //   int arr[] = new int[n];
+  //   System.out.print("Enter array: ");
+  //   for (int i = 0; i < arr.length; i++)
+  //     arr[i] = sc.nextInt();
+  //     BubleSortArray(arr);
+  //   sc.close();
+  // }
+
   public static void main(String[] args) {
+    System.out.println("Searching in 2D array");
     Scanner sc = new Scanner(System.in);
-    System.out.print("Enter length: ");
-    int n = sc.nextInt();
-    int arr[] = new int[n];
-    System.out.print("Enter array: ");
-    for (int i = 0; i < arr.length; i++)
-      arr[i] = sc.nextInt();
-    System.out.print("Rotate array no: ");
-    int r = sc.nextInt();
-    RotateArray(arr, r);
+    int [] [] arr = { {1,2,3}, {65,23,455,61}, {98,76,23,54} };
+
+    int target =23;
+
+    for(int i = 0; i < arr.length; i++){
+      for(int j = 0; j < arr.length; j++){
+        if(arr[i][j] == target) System.out.println("Founded");
+      }
+    }
+
     sc.close();
   }
-
 
 }
