@@ -208,20 +208,46 @@ public class day3 {
   //   sc.close();
   // }
 
-  public static void main(String[] args) {
-    System.out.println("Searching in 2D array");
-    Scanner sc = new Scanner(System.in);
-    int [] [] arr = { {1,2,3}, {65,23,455,61}, {98,76,23,54} };
+  // public static void main(String[] args) {
+  //   System.out.println("Searching in 2D array");
+  //   Scanner sc = new Scanner(System.in);
+  //   int [] [] arr = { {1,2,3}, {65,23,455,61}, {98,76,23,54} };
 
-    int target =23;
+  //   int target =23;
 
-    for(int i = 0; i < arr.length; i++){
-      for(int j = 0; j < arr.length; j++){
-        if(arr[i][j] == target) System.out.println("Founded");
+  //   for(int i = 0; i < arr.length; i++){
+  //     for(int j = 0; j < arr.length; j++){
+  //       if(arr[i][j] == target) System.out.println("Founded");
+  //     }
+  //   }
+  //   sc.close();
+  // }
+
+  static void EvenDigit(int [] num){
+
+    for(int i = 0; i <num.length; i++){
+      int cnt = 0;
+      int no = num[i];
+      while(no !=0){
+        cnt++;
+        no = no / 10;
       }
+      if(cnt%2 == 0) System.out.println(num[i]+" ");
     }
 
+  }
+
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.print("Enter length: ");
+    int n = sc.nextInt();
+    int arr[] = new int[n];
+    System.out.print("Enter array: ");
+    for (int i = 0; i < arr.length; i++)
+      arr[i] = sc.nextInt();
+      EvenDigit(arr);
     sc.close();
   }
+
 
 }
