@@ -223,29 +223,38 @@ public class day3 {
   //   sc.close();
   // }
 
-  static void EvenDigit(int [] num){
+  // static void EvenDigit(int [] num){
 
-    for(int i = 0; i <num.length; i++){
-      int cnt = 0;
-      int no = num[i];
-      while(no !=0){
-        cnt++;
-        no = no / 10;
-      }
-      if(cnt%2 == 0) System.out.println(num[i]+" ");
-    }
+  //   for(int i = 0; i <num.length; i++){
+  //     int cnt = 0;
+  //     int no = num[i];
+  //     while(no !=0){
+  //       cnt++;
+  //       no = no / 10;
+  //     }
+  //     if(cnt%2 == 0) System.out.println(num[i]+" ");
+  //   }
 
-  }
+  // }
+
+  // public static void main(String[] args) {
+  //   Scanner sc = new Scanner(System.in);
+  //   System.out.print("Enter length: ");
+  //   int n = sc.nextInt();
+  //   int arr[] = new int[n];
+  //   System.out.print("Enter array: ");
+  //   for (int i = 0; i < arr.length; i++)
+  //     arr[i] = sc.nextInt();
+  //     EvenDigit(arr);
+  //   sc.close();
+  // }
+
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    System.out.print("Enter length: ");
+    System.out.print("Enter number: ");
     int n = sc.nextInt();
-    int arr[] = new int[n];
-    System.out.print("Enter array: ");
-    for (int i = 0; i < arr.length; i++)
-      arr[i] = sc.nextInt();
-      EvenDigit(arr);
+    System.out.print("digits : "+(int)(Math.log10(n)+1));
     sc.close();
   }
 
