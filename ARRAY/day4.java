@@ -99,56 +99,78 @@ public class day4 {
   // }
 
 
-  public static void merge(int arr[], int brr[]){
+  // public static void merge(int arr[], int brr[]){
 
-    int crr [] = new int[arr.length + brr.length];
+  //   int crr [] = new int[arr.length + brr.length];
 
-    int i = arr.length - 1, j = brr.length - 1, k = crr.length - 1;
+  //   int i = arr.length - 1, j = brr.length - 1, k = crr.length - 1;
 
-    while (i > -1 && j > -1) {
+  //   while (i > -1 && j > -1) {
       
-      if(arr[i] > brr[j]){
-        crr[k] = arr[i];
-        i--;
-      }
-      else{
-        crr[k] = brr[j];
-        j--;
-      }
-       k--; 
-    }
+  //     if(arr[i] > brr[j]){
+  //       crr[k] = arr[i];
+  //       i--;
+  //     }
+  //     else{
+  //       crr[k] = brr[j];
+  //       j--;
+  //     }
+  //      k--; 
+  //   }
 
    
-      while(j > -1){
-        crr[k] = brr[j];
-        j--;
-        k--;
-      }
+  //     while(j > -1){
+  //       crr[k] = brr[j];
+  //       j--;
+  //       k--;
+  //     }
    
 
     
-      while (i > -1) {
-        crr[k] = arr[i];
-        i--;
-        k--;
-      }
+  //     while (i > -1) {
+  //       crr[k] = arr[i];
+  //       i--;
+  //       k--;
+  //     }
     
-      for (int e : crr) {
-        System.out.print(e+" ");
-      }
-  }
+  //     for (int e : crr) {
+  //       System.out.print(e+" ");
+  //     }
+  // }
+  
+  // public static void main(String[] args) {
+  //   Scanner sc = new Scanner(System.in);
+  //   int n = sc.nextInt();
+  //   int arr[] = new int[n];
+  //   for (int i = 0; i < n; i++)
+  //     arr[i] = sc.nextInt();
+  //   int m = sc.nextInt();
+  //   int brr[] = new int[m];
+  //   for (int i = 0; i < m; i++)
+  //     brr[i] = sc.nextInt();
+  //   merge(arr, brr);
+  //   sc.close();
+  // }
   
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
+    System.out.print("Enter row and column");
     int n = sc.nextInt();
-    int arr[] = new int[n];
-    for (int i = 0; i < n; i++)
-      arr[i] = sc.nextInt();
     int m = sc.nextInt();
-    int brr[] = new int[m];
-    for (int i = 0; i < m; i++)
-      brr[i] = sc.nextInt();
-    merge(arr, brr);
+    System.out.println("Enter array elements");
+    int arr[][] = new int[n][m];
+    for (int i = 0; i < n; i++){
+      for(int j = 0; j < m; j++){
+        arr[i][j] = sc.nextInt();
+      }
+    }
+      
+    for (int i = 0; i < n; i++){
+      for(int j = 0; j < m; j++){
+        System.out.print(arr[i][j]+" ");
+      }
+      System.out.println();
+    }
     sc.close();
   }
 
