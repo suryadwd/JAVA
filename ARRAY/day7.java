@@ -206,98 +206,144 @@ public class day7 {
 
   // 6 -> Union and intersection of array
 
-  static void UniIntArray(int[] arr1, int[] arr2) {
+  // static void UniIntArray(int[] arr1, int[] arr2) {
 
-    int i = 0, j = 0, k = 0;
+  // int i = 0, j = 0, k = 0;
 
-    int uni[] = new int[arr1.length + arr2.length];
+  // int uni[] = new int[arr1.length + arr2.length];
 
-    int intr[] = new int[Math.min(arr1.length, arr2.length)];
+  // int intr[] = new int[Math.min(arr1.length, arr2.length)];
 
-    while (i < arr1.length && j < arr2.length) {
-      if (arr1[i] < arr2[j]) {
-        uni[k] = arr1[i];
-        i++;
-        k++;
-      } else if (arr1[i] > arr2[j]) {
-        uni[k] = arr2[j];
-        j++;
-        k++;
-      } else {
-        uni[k] = arr1[i];
-        i++;
-        j++;
-        k++;
-      }
+  // while (i < arr1.length && j < arr2.length) {
+  // if (arr1[i] < arr2[j]) {
+  // uni[k] = arr1[i];
+  // i++;
+  // k++;
+  // } else if (arr1[i] > arr2[j]) {
+  // uni[k] = arr2[j];
+  // j++;
+  // k++;
+  // } else {
+  // uni[k] = arr1[i];
+  // i++;
+  // j++;
+  // k++;
+  // }
 
+  // }
+
+  // while (i < arr1.length) {
+  // uni[k] = arr1[i];
+  // k++;
+  // i++;
+  // }
+
+  // while (j < arr2.length) {
+  // uni[k] = arr2[j];
+  // k++;
+  // j++;
+  // }
+  // System.out.print("Union of the array: ");
+  // for (int l : uni) {
+  // System.out.print(l + " ");
+  // }
+
+  // i = 0;
+  // j = 0;
+  // k = 0;
+
+  // while (i < arr1.length && j < arr2.length) {
+  // if (arr1[i] < arr2[j]) {
+  // i++;
+  // } else if (arr1[i] > arr2[j]) {
+  // j++;
+  // } else {
+  // intr[k] = arr1[i];
+  // i++;
+  // j++;
+  // k++;
+  // }
+
+  // }
+
+  // System.out.println();
+
+  // System.out.print("Intersection of Array: ");
+
+  // for (int l : intr) {
+  // System.out.print(l + " ");
+  // }
+
+  // }
+
+  // public static void main(String[] args) {
+  // Scanner sc = new Scanner(System.in);
+  // System.out.print("Enter array 1 size: ");
+  // int n = sc.nextInt();
+  // System.out.println("Enter array 1 elements");
+  // int arr[] = new int[n];
+  // for (int i = 0; i < n; i++) {
+  // arr[i] = sc.nextInt();
+  // }
+
+  // System.out.print("Enter array 2 size: ");
+  // int m = sc.nextInt();
+  // System.out.println("Enter array 2 elements");
+  // int brr[] = new int[m];
+  // for (int i = 0; i < m; i++) {
+  // brr[i] = sc.nextInt();
+  // }
+
+  // UniIntArray(arr, brr);
+
+  // sc.close();
+  // }
+
+  // 7 -> Rotate an array by kth elements
+
+  static void swap(int[] arr, int i, int j) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
     }
 
-    while (i < arr1.length) {
-      uni[k] = arr1[i];
-      k++;
-      i++;
+  static void reverse(int []arr,int start, int end){
+    int low = start, high = end;
+    while(low <= high){
+      swap(arr,low,high);
+      low++;
+      high--;
     }
+  }
 
-    while (j < arr2.length) {
-      uni[k] = arr2[j];
-      k++;
-      j++;
-    }
-    System.out.print("Union of the array: ");
-    for (int l : uni) {
-      System.out.print(l + " ");
-    }
+  static void RotateArray(int [] arr, int target){
 
-    i = 0;
-    j = 0;
-    k = 0;
+    reverse(arr, 0, arr.length-1);
+    reverse(arr, 0, target-1);
+    reverse(arr, target, arr.length-1);
 
-    while (i < arr1.length && j < arr2.length) {
-      if (arr1[i] < arr2[j]) {
-        i++;
-      } else if (arr1[i] > arr2[j]) {
-        j++;
-      } else {
-        intr[k] = arr1[i];
-        i++;
-        j++;
-        k++;
-      }
-
-    }
-
-    
-    System.out.println();
-
-    System.out.print("Intersection of Array: ");
-
-    for (int l : intr) {
-      System.out.print(l + " ");
+    for (int i : arr) {
+      System.out.print(i+" ");
     }
 
   }
 
   public static void main(String[] args) {
+
     Scanner sc = new Scanner(System.in);
-    System.out.print("Enter array 1 size: ");
+    System.out.print("Enter array size: ");
     int n = sc.nextInt();
-    System.out.println("Enter array 1 elements");
+    System.out.println("Enter array elements");
     int arr[] = new int[n];
     for (int i = 0; i < n; i++) {
       arr[i] = sc.nextInt();
     }
-
-    System.out.print("Enter array 2 size: ");
-    int m = sc.nextInt();
-    System.out.println("Enter array 2 elements");
-    int brr[] = new int[m];
-    for (int i = 0; i < m; i++) {
-      brr[i] = sc.nextInt();
-    }
-
-    UniIntArray(arr, brr);
+    System.out.println("Given no of rotation ");
+    int t = sc.nextInt();
+    RotateArray(arr, t);
 
     sc.close();
+
   }
 
 }
