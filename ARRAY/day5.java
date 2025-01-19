@@ -95,7 +95,6 @@ public class day5 {
 
   public static void Occurance(int []arr, int target){
 
-
     int i = 0;
     int j = arr.length - 1;
 
