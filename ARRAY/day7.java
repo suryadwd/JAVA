@@ -301,35 +301,71 @@ public class day7 {
 
   // 7 -> Rotate an array by kth elements
 
-  static void swap(int[] arr, int i, int j) {
-    int temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-    }
+  // static void swap(int[] arr, int i, int j) {
+  // int temp = arr[i];
+  // arr[i] = arr[j];
+  // arr[j] = temp;
+  // }
 
-  static void reverse(int []arr,int start, int end){
-    int low = start, high = end;
-    while(low <= high){
-      swap(arr,low,high);
-      low++;
-      high--;
-    }
-  }
+  // static void reverse(int []arr,int start, int end){
+  // int low = start, high = end;
+  // while(low <= high){
+  // swap(arr,low,high);
+  // low++;
+  // high--;
+  // }
+  // }
 
-  static void RotateArray(int [] arr, int target){
+  // static void RotateArray(int [] arr, int target){
 
-    reverse(arr, 0, arr.length-1);
-    reverse(arr, 0, target-1);
-    reverse(arr, target, arr.length-1);
+  // reverse(arr, 0, arr.length-1);
+  // reverse(arr, 0, target-1);
+  // reverse(arr, target, arr.length-1);
+
+  // for (int i : arr) {
+  // System.out.print(i+" ");
+  // }
+
+  // }
+
+  // public static void main(String[] args) {
+
+  // Scanner sc = new Scanner(System.in);
+  // System.out.print("Enter array size: ");
+  // int n = sc.nextInt();
+  // System.out.println("Enter array elements");
+  // int arr[] = new int[n];
+  // for (int i = 0; i < n; i++) {
+  // arr[i] = sc.nextInt();
+  // }
+  // System.out.println("Given no of rotation ");
+  // int t = sc.nextInt();
+  // RotateArray(arr, t);
+
+  // sc.close();
+
+  // }
+
+  // 8 -> larget Sum of sub array
+
+  static void SumsubArray(int[] arr) {
+
+    int sum = 0;
+    int maxi = arr[0];
 
     for (int i : arr) {
-      System.out.print(i+" ");
-    }
+      sum = sum + i;
+      maxi = Math.max(sum, maxi);
 
+      if (sum < 0) {
+        sum = 0;
+      }
+
+    }
+    System.out.println(maxi);
   }
 
   public static void main(String[] args) {
-
     Scanner sc = new Scanner(System.in);
     System.out.print("Enter array size: ");
     int n = sc.nextInt();
@@ -338,9 +374,7 @@ public class day7 {
     for (int i = 0; i < n; i++) {
       arr[i] = sc.nextInt();
     }
-    System.out.println("Given no of rotation ");
-    int t = sc.nextInt();
-    RotateArray(arr, t);
+    SumsubArray(arr);
 
     sc.close();
 
