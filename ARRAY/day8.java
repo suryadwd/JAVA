@@ -213,7 +213,53 @@ public class day8 {
 
   // 5-> Transposing the square matrix without using any another matrix
 
-  static void SquareMatrixTranspose(int [][]arr,int n, int m){
+  // static void SquareMatrixTranspose(int [][]arr,int n, int m){
+
+
+  //   System.out.println("Your array: ");
+  //   for(int i = 0; i < n; i++){
+  //     for(int j= 0; j < m; j++){
+  //       System.out.print(arr[i][j]+" ");
+  //     }
+  //     System.out.println();
+  //   }
+  //   System.out.println("Transposed withing the matrix: ");
+  //   for(int i = 0; i < m; i++){
+  //     for(int j= 0; j < n; j++){
+  //      arr[i][j] = (arr[j][i]);
+  //     }
+  //   }
+
+  //   for(int i = 0; i < m; i++){
+  //     for(int j= 0; j < n; j++){
+  //       System.out.print(arr[i][j]+" ");
+  //     }
+  //     System.out.println();
+  //   }
+
+
+  // }
+
+  // public static void main(String[] args) {
+
+  //   Scanner sc = new Scanner(System.in);
+  //   System.out.print("Enter rows and col: ");
+  //   int n = sc.nextInt();
+  //   int m = sc.nextInt();
+
+  //   int arr[][] = new int[n][m];
+  //   System.out.println("First array");
+  //   for (int i = 0; i < n; i++) {
+  //     for (int j = 0; j < m; j++) {
+  //       arr[i][j] = sc.nextInt();
+  //     }
+  //   }
+  //   SquareMatrixTranspose(arr,n,m);
+
+  //   sc.close();
+  // }
+  
+  static void Rotate2dArrayBy90(int [][]arr,int n, int m){
 
 
     System.out.println("Your array: ");
@@ -223,10 +269,27 @@ public class day8 {
       }
       System.out.println();
     }
-    System.out.println("Transposed withing the matrix: ");
+    System.out.println("Transposing the matrix: ");
     for(int i = 0; i < m; i++){
       for(int j= 0; j < n; j++){
        arr[i][j] = (arr[j][i]);
+      }
+    }
+
+    for(int i = 0; i < m; i++){
+      for(int j= 0; j < n; j++){
+        System.out.print(arr[i][j]+" ");
+      }
+      System.out.println();
+    }
+
+    System.out.println("Rotating the matrix by 90: ");
+
+    for(int i = 0; i < m; i++){
+      for(int j = 0; j < 1; j++){
+        int temp = arr[i][j];
+        arr[i][j] = arr[i][j+2];
+        arr[i][j+2]=temp;
       }
     }
 
@@ -254,7 +317,7 @@ public class day8 {
         arr[i][j] = sc.nextInt();
       }
     }
-    SquareMatrixTranspose(arr,n,m);
+    Rotate2dArrayBy90(arr,n,m);
 
     sc.close();
   }
