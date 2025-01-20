@@ -60,12 +60,36 @@ public class day8 {
 
   // 3 -> concat inbuild method
 
+  // public static void main(String[] args) {
+  //   String a = "abcdef";
+  //   String b = "xxxxxx";
+  //   String c = a + b;
+  //   System.out.println(a.concat(b));
+  //   System.out.println(c);
+
+  // }
+
+  // 4 -> equals() and == in string
+
   public static void main(String[] args) {
-    String a = "abcdef";
-    String b = "xxxxxx";
-    String c = a + b;
-    System.out.println(a.concat(b));
-    System.out.println(c);
+    // String a = "abcdef";
+    // String b = "xxxxxx";
+    // System.out.println(a==b); // false normally
+    // String p = "abcdef";
+    // String q = "abcdef";
+    // System.out.println(p==q);  (interning) true not because they have same value
+    // but because they both are pointing to same string in memeory
+
+    String n = "abcdef";
+    String m = "def";
+    System.out.println(n==m); // false normally
+    String t = "abc"+m;
+    System.out.println(t);
+    System.out.println(n == t); // n amd t have the same vallue but still getting false (interning reason) t is the new string 
+
+    //main thing == compares the address of a memory it gives true because of interning 
+
+    System.out.println(n.equals(t)); // return true as it comapres the value not the location
 
   }
 
