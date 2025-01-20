@@ -63,7 +63,9 @@ public class day8 {
   public static void main(String[] args) {
     String a = "abcdef";
     String b = "xxxxxx";
+    String c = a + b;
     System.out.println(a.concat(b));
+    System.out.println(c);
 
   }
 
