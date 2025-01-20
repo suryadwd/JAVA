@@ -40,6 +40,8 @@ public class day8 {
   // sc.close();
   // }
 
+  // 2-> lastOcc in array using binary Search
+
   // static void lastOcc(int[] arr, int target) {
   // int low = 0, high = arr.length - 1;
   // int index = -1;
@@ -115,6 +117,8 @@ public class day8 {
   // sc.close();
   // }
 
+  // 3-> Add a matrix element in 2d array
+
   // static void AddMatrix(int[][] arr, int brr[][], int n, int m) {
   //   int crr[][] = new int[n][m];
 
@@ -159,7 +163,59 @@ public class day8 {
   //   sc.close();
   // }
 
-  static void Transpose(int [][] arr,int n, int m){
+  // 4 -> Transposing 2d array
+
+  // static void Transpose(int [][] arr,int n, int m){
+
+  //   int trans[][]=  new int[m][n];
+
+    // System.out.println("Your array: ");
+    // for(int i = 0; i < n; i++){
+    //   for(int j= 0; j < m; j++){
+    //     System.out.print(arr[i][j]+" ");
+    //   }
+    //   System.out.println();
+    // }
+    // System.out.println("Transposed matrix: ");
+    // for(int i = 0; i < m; i++){
+    //   for(int j= 0; j < n; j++){
+    //    trans[i][j] = (arr[j][i]);
+    //   }
+    // }
+
+    // for(int i = 0; i < m; i++){
+    //   for(int j= 0; j < n; j++){
+    //     System.out.print(trans[i][j]+" ");
+    //   }
+    //   System.out.println();
+    // }
+
+  // }
+
+  // public static void main(String[] args) {
+
+  //   Scanner sc = new Scanner(System.in);
+  //   System.out.print("Enter rows and col: ");
+  //   int n = sc.nextInt();
+  //   int m = sc.nextInt();
+
+  //   int arr[][] = new int[n][m];
+  //   System.out.println("First array");
+  //   for (int i = 0; i < n; i++) {
+  //     for (int j = 0; j < m; j++) {
+  //       arr[i][j] = sc.nextInt();
+  //     }
+  //   }
+  //   Transpose(arr,n,m);
+
+  //   sc.close();
+  // }
+
+  // 5-> Transposing the square matrix without using any another matrix
+
+  static void SquareMatrixTranspose(int [][]arr,int n, int m){
+
+
     System.out.println("Your array: ");
     for(int i = 0; i < n; i++){
       for(int j= 0; j < m; j++){
@@ -167,13 +223,20 @@ public class day8 {
       }
       System.out.println();
     }
-    System.out.println("Transposed matrix: ");
+    System.out.println("Transposed withing the matrix: ");
     for(int i = 0; i < m; i++){
       for(int j= 0; j < n; j++){
-        System.out.print(arr[j][i]+" ");
+       arr[i][j] = (arr[j][i]);
+      }
+    }
+
+    for(int i = 0; i < m; i++){
+      for(int j= 0; j < n; j++){
+        System.out.print(arr[i][j]+" ");
       }
       System.out.println();
     }
+
 
   }
 
@@ -191,7 +254,7 @@ public class day8 {
         arr[i][j] = sc.nextInt();
       }
     }
-    Transpose(arr,n,m);
+    SquareMatrixTranspose(arr,n,m);
 
     sc.close();
   }
