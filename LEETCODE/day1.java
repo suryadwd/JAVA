@@ -26,29 +26,29 @@ public class day1 {
 // Input: x = 10
 // Output: false
 
-  static public boolean isPalindrome(int x) {
+//   static public boolean isPalindrome(int x) {
         
-      if(x < 0) return false;
+//       if(x < 0) return false;
 
-      int temp = x;
-      int reverse = 0;
-      while(temp != 0){
-          int lastDigit =(int) temp % 10;
-          reverse = reverse * 10 + lastDigit;
-          temp = temp / 10;
-      }
-      return (reverse == x);
-  }
+//       int temp = x;
+//       int reverse = 0;
+//       while(temp != 0){
+//           int lastDigit =(int) temp % 10;
+//           reverse = reverse * 10 + lastDigit;
+//           temp = temp / 10;
+//       }
+//       return (reverse == x);
+//   }
 
-public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-    System.out.print("Enter number: ");
-    int num = sc.nextInt();
+// public static void main(String[] args) {
+//     Scanner sc = new Scanner(System.in);
+//     System.out.print("Enter number: ");
+//     int num = sc.nextInt();
     
       
-      System.out.println(isPalindrome(num));
+//       System.out.println(isPalindrome(num));
       
-    sc.close();
-  }
+//     sc.close();
+//   }
 
-}
+// }
