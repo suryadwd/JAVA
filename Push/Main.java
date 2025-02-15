@@ -43,9 +43,9 @@ public class Main {
           arr[i] = scanner.nextInt();
       }
       
-      obj.classifyNumbers(arr);
-      obj.printEvenNumbers(arr);
-      obj.printOddNumbers(arr);
+    //   obj.classifyNumbers(arr);
+    //   obj.printEvenNumbers(arr);
+    //   obj.printOddNumbers(arr);
 
       scanner.close();
   }

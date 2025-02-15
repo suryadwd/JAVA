@@ -1,8 +1,8 @@
-package LEETCODE;
+// package LEETCODE;
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
-public class day1 {
+// public class day1 {
 
 
 //   Given an integer x, return true if x is a 
