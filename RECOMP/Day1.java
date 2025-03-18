@@ -1,5 +1,6 @@
 package RECOMP;
 
+/* 
 // Define the Node class (should only contain data and next)
 class Node {
   int data;
@@ -25,8 +26,7 @@ class LinkedList {
 
   // Insert at the end of the linked list
 
-
-void insertAtEnd(int val) {
+  void insertAtEnd(int val) {
     Node temp = new Node(val);
 
     if (head == null)
@@ -72,20 +72,98 @@ void insertAtEnd(int val) {
 
   }
 
+  void insertAtHead(int val) {
+    Node temp = new Node(val);
 
-void insertAtHead(int val) {
-  Node temp = new Node(val);
-  
-  if(head == null) head = tail = temp;
-  else{
-    temp.next = head;
-   head = temp;
+    if (head == null)
+      head = tail = temp;
+    else {
+      temp.next = head;
+      head = temp;
+    }
+    size++;
+  }
+
+  void insertAtAny(int pos, int val) {
+
+    if (pos < 0 || pos > size) {
+      System.out.println("Invalid position!");
+      return;
+    }
+
+    if (pos == 0) {
+      insertAtHead(val);
+      return;
+    }
+
+    if (pos == size) {
+      insertAtEnd(val);
+      return;
+    }
+
+    int cnt = 0;
+    Node temp = head;
+    Node newNode = new Node(val);
+    while (cnt < pos - 1) {
+      cnt++;
+      temp = temp.next;
+    }
+
+    newNode.next = temp.next;
+    temp.next = newNode;
+
+    if (newNode.next == null)
+      tail = newNode;
+
+    size++;
+
+  }
+
+  void deleteAny(int pos) {
+
+    if (head == null) {
+      System.out.println("Alredy empty");
+      return;
+    }
+    // delete head
+    if (pos == 1) {
+      head = head.next;
+      if (head == null)
+        tail = null;
+        size--;
+        return;
+    }
+
+    // delete tail
+    if (pos == size) {
+      int cnt = 1;
+      Node temp = head;
+      while (cnt < pos - 1) {
+        cnt++;
+        temp = temp.next;
+      }
+      temp.next = null;
+      tail = temp;
+      size--;
+      return;
+    }
+
+
+    //delete from the middle
+    Node temp = head;
+    int cnt = 1;
+    while(cnt < pos-1){
+      cnt++;
+      temp = temp.next;
+    }
+    temp.next = temp.next.next;
+    size--;
   }
 
 }
-}
 
 public class Day1 {
+
   public static void main(String[] args) {
     LinkedList list = new LinkedList(); // Now using LinkedList instead of Node
 
@@ -95,6 +173,7 @@ public class Day1 {
 
     list.print();
     // list.countSize();
+    // System.out.println(list.size);
 
     list.insertAtHead(50);
     list.insertAtHead(60);
@@ -102,7 +181,178 @@ public class Day1 {
 
     list.print();
 
-    // System.out.println(list.size);
+    // System.out.println("Inserting at 3 with 0");
+
+    // list.insertAtAny(3, 0);
+    // list.print();
+
+
+    // System.out.println("Deleting from start");
+    // list.deleteAny(1);
+    // list.print();
+    // System.out.println("Deleting from end");
+    // list.deleteAny(list.size);
+    // list.print();
+    // System.out.println("Deleting at mid");
+    // list.deleteAny(2);
+    // list.print();
+
+    
 
   }
+
+
+}
+
+*/
+
+//revising the linked list
+
+class Node{
+  int data;
+  Node next;
+
+  Node(int val){
+    this.data = val;
+    this.next = null;
+  }
+}
+
+class LinkedList{
+  Node head;
+  Node tail;
+  int size;
+
+  LinkedList(){
+    this.head = null;
+    this.tail = null;
+    this.size = 0;
+  }
+
+
+void insertAtEnd(int val) {
+  Node temp = new Node(val);
+  if(head == null) head = tail = temp;
+  else{
+    tail.next = temp;
+    tail = temp;
+  }
+  size++;
+}
+
+void insertAtHead(int val){
+  Node temp = new Node(val);
+  if(head == null) head = tail = temp;
+  else{
+    temp.next = head;
+    head = temp;
+  }
+  size++;
+}
+
+void insertAtAny(int pos, int val){
+  if(pos<0) throw new Error("Position must be positive");
+
+  if(pos == 1) insertAtHead(val);
+
+  if(pos == size) insertAtEnd(val);
+
+  int cnt = 0;
+  Node temp = head;
+
+  while(cnt < pos - 1){
+    temp = temp.next;
+    cnt++;
+  }
+
+  Node newVal = new Node(val);
+
+  newVal.next = temp.next; //pahle purne wale ko save kro
+  temp.next = newVal; // fir naye ko add karo
+
+  if (newVal.next == null) tail = newVal;
+
+  size++;
+
+}
+
+void deleteAny(int pos){
+  
+  if(pos < 0 || pos > size){
+    System.out.println("Invalid position");
+    return;
+  }
+
+  if(head == null) {
+    System.out.println("Already empty");
+    return;
+  }
+
+  if(pos == 1){
+    head = head.next;
+    if(head == null) tail = null;
+    size--;
+    return;
+  }
+
+  if(pos == size){
+    int cnt = 1;
+    Node temp = head;
+    while (cnt < pos - 1) {
+      temp = temp.next;
+      cnt++;
+    }
+    temp.next = null;
+    size--;
+    tail = temp;
+    return;
+  }
+
+  int cnt = 1;
+  Node temp = head;
+
+  while(cnt < pos-1){
+    temp = temp.next;
+    cnt++;
+  }
+
+  temp.next = temp.next.next;
+  size--;
+
+}
+
+void print(){
+  Node temp = head;
+  while(temp != null){
+    System.out.print(temp.data+" ");
+    temp = temp.next;
+  }
+  System.out.println();
+}
+
+}
+
+public class Day1 {
+
+  public static void main(String[] args) {
+    LinkedList list = new LinkedList(); 
+
+    list.insertAtEnd(10);
+    list.insertAtEnd(20);
+    list.insertAtEnd(30);
+    list.print();
+
+    list.insertAtHead(1);
+    list.insertAtHead(2);
+    list.insertAtHead(3);
+    list.print();
+
+    list.insertAtAny(3, 0);
+    list.print();
+
+    list.deleteAny(2);
+    list.print();
+
+  }
+
 }
