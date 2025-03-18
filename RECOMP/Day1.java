@@ -330,6 +330,36 @@ void print(){
   System.out.println();
 }
 
+void middle(){
+  Node temp = head;
+  int length = 0;
+  while (temp != null) {
+    length++;
+    temp = temp.next;
+  }
+
+  int pos = 0;
+
+  // odd check 
+  if(length % 2 != 0){
+    pos =(length/2) + 1;
+  }
+  // even check
+  if(length % 2 == 0){
+    pos =(length/2) + 1; 
+  }
+
+  int cnt = 1;
+  temp = head;
+
+  while(temp != null){
+    if(cnt == pos)System.out.println(temp.data);
+    temp = temp.next;
+    cnt++;
+  }
+
+}
+
 }
 
 public class Day1 {
@@ -337,6 +367,7 @@ public class Day1 {
   public static void main(String[] args) {
     LinkedList list = new LinkedList(); 
 
+    /*
     list.insertAtEnd(10);
     list.insertAtEnd(20);
     list.insertAtEnd(30);
@@ -352,6 +383,19 @@ public class Day1 {
 
     list.deleteAny(2);
     list.print();
+
+    */
+
+    System.out.println("Print the middle of the node");
+
+    list.insertAtEnd(10);
+    list.insertAtEnd(20);
+    list.insertAtEnd(30);
+    list.insertAtEnd(40);
+    list.insertAtEnd(50);
+    list.insertAtEnd(60);
+
+    list.middle();
 
   }
 
