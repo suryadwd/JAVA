@@ -331,32 +331,38 @@ void print(){
 }
 
 void middle(){
-  Node temp = head;
-  int length = 0;
-  while (temp != null) {
-    length++;
-    temp = temp.next;
+
+  // Node temp = head;
+  // int length = 0;
+  // while (temp != null) {
+  //   length++;
+  //   temp = temp.next;
+  // }
+  // int pos = 0;
+  // // odd check 
+  // if(length % 2 != 0) pos =(length/2) + 1;
+  // // even check
+  // if(length % 2 == 0) pos =(length/2) + 1;
+
+  // int cnt = 1;
+  // temp = head;
+
+  // while(temp != null){
+  //   if(cnt == pos)System.out.println(temp.data);
+  //   temp = temp.next;
+  //   cnt++;
+  // }
+
+ // now using the two pointer method approh to do it without findning the size
+
+  Node low = head, high = head;
+
+  while(high.next != null){
+    low = low.next;
+    high = high.next.next;
   }
 
-  int pos = 0;
-
-  // odd check 
-  if(length % 2 != 0){
-    pos =(length/2) + 1;
-  }
-  // even check
-  if(length % 2 == 0){
-    pos =(length/2) + 1; 
-  }
-
-  int cnt = 1;
-  temp = head;
-
-  while(temp != null){
-    if(cnt == pos)System.out.println(temp.data);
-    temp = temp.next;
-    cnt++;
-  }
+  System.out.println(low.data);
 
 }
 
@@ -394,6 +400,9 @@ public class Day1 {
     list.insertAtEnd(40);
     list.insertAtEnd(50);
     list.insertAtEnd(60);
+    list.insertAtEnd(70);
+    list.insertAtEnd(80);
+    list.insertAtEnd(90);
 
     list.middle();
 
