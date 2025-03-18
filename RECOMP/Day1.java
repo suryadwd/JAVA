@@ -357,7 +357,11 @@ void middle(){
 
   Node low = head, high = head;
 
-  while(high.next != null){
+  //in while for odd high.next! = null while for even high != null
+
+    //agar high.next pahle lik dege to error aa jayega kyu ki null.next kuch hota nai hai agar high null hoga to
+
+  while( high != null && high.next != null ){
     low = low.next;
     high = high.next.next;
   }
