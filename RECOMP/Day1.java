@@ -370,6 +370,10 @@ void middle(){
 
 }
 
+void intersect(){
+  
+}
+
 }
 
 public class Day1 {
@@ -394,7 +398,7 @@ public class Day1 {
     list.deleteAny(2);
     list.print();
 
-    */
+   
 
     System.out.println("Print the middle of the node");
 
@@ -409,6 +413,22 @@ public class Day1 {
     list.insertAtEnd(90);
 
     list.middle();
+     */
+
+    System.out.println("Removing the nth last element of the node");
+    list.insertAtEnd(10);
+    list.insertAtEnd(20);
+    list.insertAtEnd(30);
+
+    list.insertAtHead(1);
+    list.insertAtHead(2);
+    list.insertAtHead(3);
+    list.insertAtHead(55);
+    list.print();
+
+    
+
+
 
   }
 
