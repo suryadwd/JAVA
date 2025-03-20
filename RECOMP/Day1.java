@@ -370,8 +370,41 @@ void middle(){
 
 }
 
-void intersect(){
+void intersect(Node head1, Node head2){
+  Node temp1 = head1, temp2 = head2;
+
+  int lenA = 0, lenB = 0, len = 0;
+
+  while(temp1 != null){
+    lenA++;
+    temp1 = temp1.next;
+  }
+
+  while(temp2 != null){
+    lenB++;
+    temp2 = temp2.next;
+  }
+
+  temp1 = head1;
+  temp2 = head2;
+
+
+  if(lenA > lenB){ 
+    len = lenA - lenB;
+    for(int i = 0; i < len; i++) temp1 = temp1.next;
+  }
+  else {
+    len = lenB - lenA;
+    for(int i = 0; i < len; i++) temp2 = temp2.next;
+  }
   
+  while(temp1.data != temp2.data){
+    temp1 = temp1.next;
+    temp2 = temp2.next;
+  }
+
+  System.out.println(temp1.data);
+
 }
 
 }
@@ -379,7 +412,7 @@ void intersect(){
 public class Day1 {
 
   public static void main(String[] args) {
-    LinkedList list = new LinkedList(); 
+    // LinkedList list = new LinkedList(); 
 
     /*
     list.insertAtEnd(10);
@@ -415,6 +448,7 @@ public class Day1 {
     list.middle();
      */
 
+     /*
     System.out.println("Removing the nth last element of the node");
     list.insertAtEnd(10);
     list.insertAtEnd(20);
@@ -425,10 +459,26 @@ public class Day1 {
     list.insertAtHead(3);
     list.insertAtHead(55);
     list.print();
-
+     */
     
+     LinkedList list1 = new LinkedList(); 
+     LinkedList list2 = new LinkedList(); 
+     LinkedList list = new LinkedList(); 
 
-
+     System.out.println("Finding  the intersection of element of two linklist");
+     list1.insertAtEnd(10);
+     list1.insertAtEnd(20);
+     list1.insertAtEnd(30);
+     list1.insertAtEnd(40);
+     list1.insertAtEnd(50);
+ 
+     list2.insertAtEnd(1);
+     list2.insertAtEnd(2);
+     list2.insertAtEnd(3);
+     list2.insertAtEnd(4);
+     list2.insertAtEnd(50);
+     
+    list.intersect(list1.head,list2.head);
 
   }
 
