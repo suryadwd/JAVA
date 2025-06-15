@@ -59,6 +59,28 @@ class SLL{
     size++;
   }
 
+  void insertAtAny(int idx, int value){
+    Node add = new Node(value);
+    Node temp = head;
+    int pos = 1;
+    while(pos < idx){
+      temp = temp.next;
+      pos++;
+    }
+    add.next = temp.next;
+    temp.next = add;
+  }
+
+  void get(int idx){
+    Node temp = head;
+    int pos = 1;
+    while(pos != idx){
+      temp = temp.next;
+      pos++;
+    }
+    System.out.println(temp.data);
+  }
+
 }
 
 
@@ -70,11 +92,13 @@ public class Main {
       ll.insertAtEnd(3);
       ll.insertAtEnd(4);
       ll.insertAtEnd(5);
-      ll.printN();
-      ll.insertAtHead(9);
-      ll.insertAtHead(8);
-      ll.insertAtHead(7);
-      ll.printN();
-      
+      // ll.printN();
+      // ll.insertAtHead(9);
+      // ll.insertAtHead(8);
+      // ll.insertAtHead(7);
+      ll.insertAtAny(3,69);
+      // ll.printN();
+      ll.get(4);
+
     }
 }
