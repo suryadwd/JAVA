@@ -81,6 +81,21 @@ class SLL{
     System.out.println(temp.data);
   }
 
+  void set(int idx, int value){
+    Node temp = head;
+    int pos = 1;
+    while (pos != idx) {
+      temp = temp.next;
+      pos++;
+    }
+    temp.data = value;
+    System.out.println(temp.data);
+  }
+
+  void deleteAtHead(){
+    head = head.next;
+  }
+
 }
 
 
@@ -96,9 +111,13 @@ public class Main {
       // ll.insertAtHead(9);
       // ll.insertAtHead(8);
       // ll.insertAtHead(7);
-      ll.insertAtAny(3,69);
+      // ll.insertAtAny(3,69);
       // ll.printN();
-      ll.get(4);
+      // ll.get(4);
+      // ll.set(4,0);
+      // ll.printN();
+      // ll.deleteAtHead();
+      ll.printN();
 
     }
 }
