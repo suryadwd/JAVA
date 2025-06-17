@@ -96,6 +96,28 @@ class SLL{
     head = head.next;
   }
 
+  void delete(int idx){
+      Node temp = head;
+      if (idx == 1) deleteAtHead();
+      int pos = 1;
+      while(pos < idx){
+        temp = temp.next;
+        pos++;
+      }
+      if(temp.next == tail) tail = temp;
+      temp.next = temp.next.next;
+  }
+
+  void middleEle(Node head){
+    Node slow = head;
+    Node fast = head;
+    while(fast != null && fast.next != null){
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+    System.out.println("Middle node"+slow.data);
+  }
+
 }
 
 
@@ -107,6 +129,7 @@ public class Main {
       ll.insertAtEnd(3);
       ll.insertAtEnd(4);
       ll.insertAtEnd(5);
+
       // ll.printN();
       // ll.insertAtHead(9);
       // ll.insertAtHead(8);
@@ -117,7 +140,12 @@ public class Main {
       // ll.set(4,0);
       // ll.printN();
       // ll.deleteAtHead();
-      ll.printN();
+      // ll.insertAtAny(3,69);
+      // ll.printN();
+      // ll.delete(4);
+
+      // ll.printN();
+      
 
     }
 }
