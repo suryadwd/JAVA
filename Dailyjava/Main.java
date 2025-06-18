@@ -121,6 +121,7 @@ class SLL{
 }
 
 
+
 public class Main {
     public static void main(String[] args) {
       SLL ll = new SLL();
@@ -149,3 +150,29 @@ public class Main {
 
     }
 }
+
+
+// leetcode 83
+
+// class Solution {
+//     public ListNode deleteDuplicates(ListNode head) {
+//         ListNode slow = head;
+//         ListNode fast = head;
+
+//         while(fast != null && fast.next != null){
+//             fast = fast.next;
+//             if(slow.val == fast.val){
+//                if(fast.next != null){
+//                  while(fast.next != null && fast.val == slow.val){
+//                     fast = fast.next;
+//                     slow.next = slow.next.next;
+//                  }
+//                }else{
+//                 slow.next = null;
+//                }
+//             }
+//             slow = slow.next;
+//         }
+//             return head;
+//     }
+// }
