@@ -176,3 +176,21 @@ public class Main {
 //             return head;
 //     }
 // }
+
+	public static void selectionSort(int arr[], int n) {
+		for(int i = 0; i < n; i++){
+			int minIdx = i;
+			// abhi ke value ko mana ke sanse lowest hai aur uske agle me search kiya
+			// koi aurr choti value ko agar mili to minIndx me daal diya
+			// apni i to already starting me hai minIdx me ab uske baad wala chota index le liya 
+			// aurr swap kiya i ko age badha diya a  fir vahisame cheze hoti rahege
+			for(int j = i + 1; j < n; j++){
+				if(arr[minIdx] > arr[j]){
+					minIdx = j;
+				}
+			}
+				int temp = arr[minIdx];
+				arr[minIdx] = arr[i];
+				arr[i] = temp;
+		}
+	}
