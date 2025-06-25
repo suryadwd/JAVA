@@ -308,3 +308,41 @@ public class Main
 		fibo(7);
 	}
 }
+
+import java.util.HashMap;
+public class Solution {
+    public static String read(int n, int []book, int target){
+
+        // for(int i = 0; i < book.length; i++){
+        //     for(int j = i+1; j < book.length; j++){
+        //         if(target == (book[i] + book[j])) return "YES";
+        //     }
+        // }
+        // return "NO";
+
+        HashMap <Integer, Integer> map = new HashMap<>();
+        
+        for(int i = 0; i < book.length; i++){
+            int remaining = target - book[i];
+            if(map.containsKey(remaining)) return "YES";
+            map.put(book[i], i);
+        }
+        return "NO";
+        
+
+    }
+}
+
+import java.util.* ;
+import java.io.*; 
+public class Solution {
+    public static int occursOnce(int[] a, int n) {
+        // HashMap<Integer, Integer> map = new HashMap<>();
+        // for(int x : a) map.put(x, map.getOrDefault(x, 0) + 1);
+        // for (Map.Entry<Integer, Integer> entry : map.entrySet())if (entry.getValue() == 1) return entry.getKey();
+        // return -1;
+
+        // i have to use the xor here 
+
+    }
+}
