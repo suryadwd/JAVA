@@ -360,3 +360,23 @@ class Solution {
         return set.size() == map.size();
     }
 }
+
+class Solution {
+    
+    public static boolean binarySearch(int arr[], int target){
+        int low = 0;
+        int high = arr.length-1;
+        
+        while(low <= high){
+            int mid = low + (high-low)/2;
+            if(arr[mid] == target) return true;
+            if(target > arr[mid]) low = mid + 1;
+            else high = mid - 1;
+        }
+        return false;
+    }
+    
+    static boolean searchInSorted(int arr[], int k) {
+        return binarySearch(arr,k);
+    }
+}
