@@ -454,3 +454,29 @@ class Solution {
         return res.toString();
     }
 }
+
+
+import java.util.*;
+class Solution {
+    public boolean isPalindrome(String s) {
+        String m = s.toUpperCase();
+        StringBuilder original = new StringBuilder();
+        for (char c : m.toCharArray()) {
+             if (Character.isLetterOrDigit(c)){
+                original.append(c);
+            }
+        }
+        Stack <Character> stack= new Stack<>();
+        for(char c: m.toCharArray()){
+            if (Character.isLetterOrDigit(c)){
+                stack.push(c);
+            }
+        }
+        StringBuilder reverse = new StringBuilder();
+        while(!stack.isEmpty()){
+            char t = stack.pop();
+            reverse.append(t);
+        }
+        return (original.toString()).equals(reverse.toString());
+    }
+}
