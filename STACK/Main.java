@@ -11,3 +11,47 @@ import java.util.Stack;
 //   }
 // }
 
+// class Main{
+
+//   public static String revStack(Stack<String> s){
+//     Stack<String> rev = new Stack<>();
+//     while(s.size() != 0){
+//       rev.push(s.pop());
+//     }
+//     return rev.toString();  
+//   }
+
+//   public static void main(String[] args) {
+//     Stack<String> s = new Stack<>();
+//     s.push("a");
+//     s.push("b");
+//     s.push("c");
+//     System.out.println(s);
+//     revStack(s);
+//     System.out.println(s);
+//   }
+// }
+
+
+class Main{
+
+  public static Stack<Integer> revStack(Stack<Integer> s){
+    Stack<Integer> rev_Stack = new Stack<>();
+    while(s.size() != 0){
+      rev_Stack.push(s.pop());
+    }
+    return rev_Stack;
+  }
+
+  public static void main(String[] args) {
+    Stack<Integer> org_stack = new Stack<>();
+    org_stack.push(1);
+    org_stack.push(2);
+    org_stack.push(3);
+    org_stack.push(4);
+    org_stack.push(5);
+
+    System.out.println(revStack(org_stack));
+
+  }
+}
