@@ -43,6 +43,16 @@ class Main{
     return rev_Stack;
   }
 
+  public static Stack<Integer> copy(Stack<Integer> s){
+    Stack<Integer> temp = new Stack<>(); //reverse
+    while (!s.isEmpty()) {
+      temp.push(s.pop());
+    }
+    Stack<Integer> copy = new Stack<>(); //reverse reverse
+    while(!temp.isEmpty())copy.push(temp.pop());
+    return copy;
+  }
+
   public static void main(String[] args) {
     Stack<Integer> org_stack = new Stack<>();
     org_stack.push(1);
@@ -51,7 +61,7 @@ class Main{
     org_stack.push(4);
     org_stack.push(5);
 
-    System.out.println(revStack(org_stack));
-
+    // System.out.println(revStack(org_stack));
+    System.out.println(copy(org_stack));
   }
 }
