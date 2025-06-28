@@ -44,10 +44,11 @@ class Main{
   }
 
   public static Stack<Integer> copy(Stack<Integer> s){
-    Stack<Integer> temp = new Stack<>(); //reverse
-    while (!s.isEmpty()) {
-      temp.push(s.pop());
-    }
+    // Stack<Integer> temp = new Stack<>(); //reverse
+    // while (!s.isEmpty()) {
+    //   temp.push(s.pop());
+    // }
+    Stack<Integer> temp = revStack(s);
     Stack<Integer> copy = new Stack<>(); //reverse reverse
     while(!temp.isEmpty())copy.push(temp.pop());
     return copy;
