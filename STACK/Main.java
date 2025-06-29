@@ -67,7 +67,45 @@ import java.util.Stack;
 //   }
 // }
 
+// class Main{
+
+//   public static void main(String[] args) {
+    
+//     Stack<Integer> stack = new Stack<>();
+//     stack.push(1);
+//     stack.push(2);
+//     stack.push(3);
+//     stack.push(4);
+//     stack.push(5);
+//     System.out.println(stack);
+//     Stack<Integer> temp  = new Stack<>();
+//     while(stack.size() > 0) temp.push(stack.pop());
+//     // System.out.println(temp);
+//     int pos = 3, i = 0;
+//     int val = 69;
+
+//     while(temp.size() != 0){
+//       if(i == pos) {
+//         stack.push(val);
+//       }
+//       else stack.push(temp.pop());
+//       i++;
+//     }
+  
+//     System.out.println(stack);
+//   }
+// }
+
+
 class Main{
+
+  public static void recusion(Stack<Integer> s){
+    if(s.isEmpty()) return;
+    int top = s.pop();
+    recusion(s);
+    System.out.print(top+" ");
+    s.push(top);
+  }
 
   public static void main(String[] args) {
     
@@ -78,20 +116,6 @@ class Main{
     stack.push(4);
     stack.push(5);
     System.out.println(stack);
-    Stack<Integer> temp  = new Stack<>();
-    while(stack.size() > 0) temp.push(stack.pop());
-    // System.out.println(temp);
-    int pos = 3, i = 0;
-    int val = 69;
-
-    while(temp.size() != 0){
-      if(i == pos) {
-        stack.push(val);
-      }
-      else stack.push(temp.pop());
-      i++;
-    }
-  
-    System.out.println(stack);
+    recusion(stack);
   }
 }
