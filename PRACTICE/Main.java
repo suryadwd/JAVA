@@ -18,11 +18,31 @@ class Main {
     }
   }
 
+  public static void bubleSort(int arr[]){
+    for(int i = 0; i < arr.length; i++){
+      for(int j = 0; j < arr.length - i - 1; j++){
+        if(arr[j] > arr[j+1]) swap(arr, j, j+1);
+      }
+    }
+  }
+ 
+  public static void insertionSort(int arr[]){
+    for(int i = 1; i < arr.length; i++){
+      int j = i;
+      while(j - 1 >= 0 && arr[j-1]>arr[j]){
+        swap(arr,j-1,j);
+        j--;
+      }
+    }
+  }
+
   public static void main(String[] args) {
     int arr[] = { 1, 6, 3, 7, 2, 8, 0, 9, 5 };
     for(int x : arr) System.out.print(x+" ");
     System.out.println();
-    SelectioSsort(arr);
+    // SelectioSsort(arr);
+    // bubleSort(arr);
+    insertionSort(arr);
     for(int x : arr) System.out.print(x+" ");
   }
 
