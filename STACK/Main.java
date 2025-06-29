@@ -96,26 +96,92 @@ import java.util.Stack;
 //   }
 // }
 
+// class Main{
+
+//   public static void recusion(Stack<Integer> s){
+//     if(s.isEmpty()) return;
+//     int top = s.pop();
+//     recusion(s);
+//     System.out.print(top+" ");
+//     s.push(top);
+//   }
+
+//   public static void main(String[] args) {
+    
+//     Stack<Integer> stack = new Stack<>();
+//     stack.push(1);
+//     stack.push(2);
+//     stack.push(3);
+//     stack.push(4);
+//     stack.push(5);
+//     System.out.println(stack);
+//     recusion(stack);
+//   }
+// }
 
 class Main{
 
-  public static void recusion(Stack<Integer> s){
-    if(s.isEmpty()) return;
-    int top = s.pop();
-    recusion(s);
-    System.out.print(top+" ");
-    s.push(top);
+public static class StackMe{
+  int s, idx = 0;
+  int arr[];
+  StackMe(int size){
+  this.s = size;
+  arr = new int[s];
+  }
+  void push(int x){
+    if(idx >= s){
+    System.out.println("Stack overflow");
+    return;
+    }
+    else arr[idx++] = x;
   }
 
+  int pop(){
+    if(idx < 0){
+    System.out.println("Stack inflow");
+    return -1; 
+    }
+    else {
+      int val = arr[idx - 1];     // 1 2 3 4 5 idx = 6;
+      idx--; 
+      return val;
+    }
+  }
+
+  int peek(){
+    if(isEmpty()){ 
+    System.out.println("stack is empty");
+    return -1;
+  }
+    return arr[idx - 1];
+  }
+
+  int size(){return idx;}              // 1 2 3 4 5
+
+  boolean isEmpty(){return idx == 0;}
+
+  boolean isFull(){return idx == s;}
+
+  void print(){
+  for(int i = 0; i < idx; i++) {
+    System.out.print(arr[i] + " ");
+  }
+  System.out.println();
+}
+
+
+}
+
+
+
   public static void main(String[] args) {
-    
-    Stack<Integer> stack = new Stack<>();
+    StackMe stack = new StackMe(5);
     stack.push(1);
     stack.push(2);
     stack.push(3);
     stack.push(4);
     stack.push(5);
-    System.out.println(stack);
-    recusion(stack);
+   
   }
+
 }
