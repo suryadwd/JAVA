@@ -36,13 +36,40 @@ class Main {
     }
   }
 
+  public static void merge(int[] arr, int start, int mid, int end) {
+    int temp []=  new int[end - start + 1];
+    int left = start, right = mid+1, idx = 0;
+
+    while(left <= mid && right <= end){
+      if(arr[left] <= arr[right]) temp[idx++] = arr[left++];
+      else temp[idx++] = arr[right++];
+    }
+
+    while(left <= mid) temp[idx++] = arr[left++];
+    while( right <= end) temp[idx++] = arr[right++];
+
+    idx = 0;
+    for (int i = 0; i < temp.length; i++) arr[start + i] = temp[i];
+    
+
+  }
+
+  public static void mergeSort(int arr[], int start, int end){
+    if(start >= end) return;
+    int mid = start + (end - start)/2;
+    mergeSort(arr, start, mid);           // left part
+    mergeSort(arr, mid+1, end);           // right part
+    merge(arr, start, mid, end);
+  }
+
   public static void main(String[] args) {
     int arr[] = { 1, 6, 3, 7, 2, 8, 0, 9, 5 };
     for(int x : arr) System.out.print(x+" ");
     System.out.println();
     // SelectioSsort(arr);
     // bubleSort(arr);
-    insertionSort(arr);
+    // insertionSort(arr);
+    mergeSort(arr, 0, arr.length - 1);
     for(int x : arr) System.out.print(x+" ");
   }
 
