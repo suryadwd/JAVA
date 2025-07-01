@@ -4,12 +4,10 @@
 // // // // class Node{
 // // // //   int data;
 // // // //   Node next;
-
 // // // //   Node(int v){
 // // // //     this.data = v;
 // // // //     this.next = null;
 // // // //   }
-
 // // // // }
 
 // // // // class SLL{

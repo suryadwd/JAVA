@@ -119,9 +119,9 @@ import java.util.Stack;
 //   }
 // }
 
-class Main{
+// class Main{
 
-public static class StackMe{
+// public static class StackMe{
   int s, idx = 0;
   int arr[];
   StackMe(int size){
@@ -182,6 +182,24 @@ public static class StackMe{
     stack.push(4);
     stack.push(5);
    
+  }
+
+}
+
+
+
+class Main{
+
+  class Node{
+  int val;
+  Node next;
+  Node(int val){
+    this.val = val;
+  }
+}
+
+  class Stack{
+    
   }
 
 }
