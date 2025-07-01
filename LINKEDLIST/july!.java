@@ -121,3 +121,23 @@ class Main{
         test.print();
     }
 }
+
+
+// new 
+
+
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode curr = head;
+        ListNode prev = null;
+        ListNode forw = null;
+
+        while(curr != null){
+            forw = curr.next; // assign forward to the next
+            curr.next = prev; // assign null to current
+            prev = curr;
+            curr = forw;
+        }
+        return prev;
+    }
+}
