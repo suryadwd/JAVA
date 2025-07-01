@@ -1,5 +1,5 @@
 
-// day 1 july 
+day 1 july 
 class Main{
     
     static class Node{
@@ -64,7 +64,20 @@ class Main{
            head = head.next;
        }
        
-       
+       public void delete(int pos){
+           if(pos == 0){
+               deleteAtHead();
+               return;
+           }
+           int cnt = 0;
+           Node temp = head;
+           while(cnt < pos - 1){
+               temp = temp.next;
+               cnt++;
+           }
+           if(temp.next == tail) tail = temp;
+           temp.next = temp.next.next; 
+       }
        
        public void print(){
            Node temp = head;
@@ -88,6 +101,10 @@ class Main{
         test.insertAtAny(666,2);
         test.print();
         test.deleteAtHead();
+        test.print();
+        test.delete(2);
+        test.print();
+        test.delete(3);
         test.print();
     }
 }
