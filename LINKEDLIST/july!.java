@@ -1,6 +1,5 @@
 
-day 1 july 
-
+// day 1 july 
 class Main{
     
     static class Node{
@@ -61,6 +60,12 @@ class Main{
          if (add.next == null) tail = add;
        }
        
+       public void deleteAtHead(){
+           head = head.next;
+       }
+       
+       
+       
        public void print(){
            Node temp = head;
            while(temp != null){
@@ -81,6 +86,8 @@ class Main{
         test.insertAtTail(8);
         test.print();
         test.insertAtAny(666,2);
+        test.print();
+        test.deleteAtHead();
         test.print();
     }
 }
