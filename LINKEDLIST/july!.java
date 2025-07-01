@@ -1,5 +1,8 @@
+package LINKEDLIST;
 
-day 1 july 
+// day 1 july 
+
+
 class Main{
     
     static class Node{
@@ -15,10 +18,11 @@ class Main{
         
         Node head;
         Node tail;
-        
+        int size;
         LinkedList(){
            this.head = null;
            this.tail = null;
+           size = 0;
         }
         
        public void insertAtHead(int val){
@@ -28,6 +32,7 @@ class Main{
               temp.next = head;
               head = temp;
           }
+          size++;
        }
        
        public void insertAtTail(int val){
@@ -37,6 +42,7 @@ class Main{
                tail.next = temp;
                tail = temp;
            }
+           size++;
        }
        
        public void insertAtAny(int val, int pos){
@@ -58,10 +64,12 @@ class Main{
         
         // to maintain  the end position
          if (add.next == null) tail = add;
+         size++;
        }
        
        public void deleteAtHead(){
            head = head.next;
+           size--;
        }
        
        public void delete(int pos){
@@ -77,6 +85,18 @@ class Main{
            }
            if(temp.next == tail) tail = temp;
            temp.next = temp.next.next; 
+           size--;
+       }
+       
+       public void update(int pos, int newVal){
+           if (pos < 0 || pos >= size) return; 
+           int cnt = 0;
+           Node temp = head;
+           while(cnt < pos){
+               cnt++;
+               temp = temp.next;
+           }
+           temp.val = newVal;
        }
        
        public void print(){
@@ -94,17 +114,10 @@ class Main{
         test.insertAtHead(1);
         test.insertAtHead(2);
         test.insertAtHead(3);
-        test.print();
         test.insertAtTail(9);
         test.insertAtTail(8);
         test.print();
-        test.insertAtAny(666,2);
-        test.print();
-        test.deleteAtHead();
-        test.print();
-        test.delete(2);
-        test.print();
-        test.delete(3);
+        test.update(2,100);
         test.print();
     }
 }
