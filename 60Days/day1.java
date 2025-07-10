@@ -53,3 +53,24 @@ class Solution {
     }
 }
 
+2038. Remove Colored Pieces if Both Neighbors are the Same Color
+
+class Solution {
+    public boolean winnerOfGame(String colors) {
+        char arr[] = colors.toCharArray();
+        int n = 1, acount = 0, bcount = 0;
+
+        boolean flag = false;
+        while(n < arr.length-1){
+            if(arr[n] == 'A' && arr[n - 1] == 'A' && arr[n + 1] ==  'A') {
+                acount++;
+            }
+             if(arr[n] == 'B' && arr[n - 1] == 'B' && arr[n + 1] ==  'B') {
+                bcount++;
+            }
+            n++;
+        }
+        return acount > bcount;
+    }
+}
+
