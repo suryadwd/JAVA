@@ -310,3 +310,25 @@ class Solution {
         return sum;
     }
 }
+
+max element  in tree
+
+public static int maxValue(Node root){
+        int max = Integer.MIN_VALUE;
+        int maxi = 0;
+        Queue<Node> q = new LinkedList<>();
+        if(root == null) return -1;
+        q.offer(root);
+        while(!q.isEmpty()){
+            int size = q.size();
+            for(int i = 0; i < size; i++){
+                Node x = q.poll();
+                maxi = Math.max(x.val, max);
+                max = x.val;
+                if(x.left != null) q.offer(x.left);
+                if(x.right != null) q.offer(x.right);
+            }
+        }
+            return maxi;
+    }
+}
