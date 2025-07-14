@@ -188,3 +188,25 @@ class Solution {
         helper(root.right, list);
     }
 }
+
+gfg Size of Binary Tree
+
+class Solution {
+    public static int getSize(Node node) {
+        List<Integer> list = new ArrayList<>();
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(node);
+        int totalNodes = 0;
+        while(!queue.isEmpty()){
+            int size = queue.size();
+            for(int i = 0; i < size; i++){
+                Node data = queue.poll();
+                totalNodes++;
+                list.add(data.data);
+                if(data.left != null) queue.offer(data.left);
+                if(data.right != null) queue.offer(data.right);
+            }
+        }
+        return totalNodes;
+    }
+}
