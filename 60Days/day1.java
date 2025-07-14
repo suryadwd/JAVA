@@ -249,3 +249,23 @@ public class Solution {
         list.add(root.data);
     }
 }
+
+Count Leaves in Binary Tree
+
+class Solution {
+    int countLeaves(Node node) {
+        Queue<Node> queue = new LinkedList<>();
+        int leaves = 0;
+        queue.offer(node);
+        while(!queue.isEmpty()){
+            int size = queue.size();
+            for(int i = 0; i  < size; i++){
+                Node n = queue.poll();
+                if(n.left == null && n.right == null)leaves++;
+                if(n.left != null) queue.offer(n.left);
+                if(n.right != null) queue.offer(n.right);
+            }
+        }
+        return leaves;
+    }
+}
