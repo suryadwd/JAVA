@@ -210,3 +210,42 @@ class Solution {
         return totalNodes;
     }
 }
+
+
+Tree Traversals coding ninjas
+
+import java.util.*;
+
+public class Solution {
+    public static List<List<Integer>> getTreeTraversal(TreeNode root) {
+        List<Integer> inorderList = new ArrayList<>();
+        List<Integer> preOrderList = new ArrayList<>();
+        List<Integer> postOrderList = new ArrayList<>();
+        List<List<Integer>> list = new ArrayList<>();
+        inorder(root, inorderList);
+        preOrder(root, preOrderList);
+        postOrder(root, postOrderList);
+        list.add(inorderList);
+        list.add(preOrderList);
+        list.add(postOrderList);
+        return list;
+    }
+    public static void inorder(TreeNode root, List<Integer> list){
+        if(root == null) return;
+        inorder(root.left, list);
+        list.add(root.data);
+        inorder(root.right, list);
+    }
+    public static void preOrder(TreeNode root, List<Integer> list ){
+        if(root == null) return;
+        list.add(root.data);
+        preOrder(root.left, list);
+        preOrder(root.right, list);
+    }
+    public static void postOrder(TreeNode root, List<Integer> list ){
+        if(root == null) return;
+        postOrder(root.left, list);
+        postOrder(root.right, list);
+        list.add(root.data);
+    }
+}
