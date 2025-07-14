@@ -74,3 +74,26 @@ class Solution {
     }
 }
 
+104. Maximum Depth of Binary Tree
+
+class Solution {
+    public int maxDepth(TreeNode root) {
+        // List<Integer> list = new ArrayList<>();
+        if(root == null) return 0;
+        int depth  = 0;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()){
+            int size = queue.size();
+            for(int i = 0; i < size; i++){
+                TreeNode data = queue.poll();
+                // list.add(data.val);
+                if(data.left != null) queue.offer(data.left);
+                if(data.right !=  null) queue.offer(data.right);
+            }
+             depth++;
+        }
+        return depth;
+    }
+}
+
