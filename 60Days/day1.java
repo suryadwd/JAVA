@@ -289,3 +289,24 @@ class Solution {
         return count;
     }
 }
+
+gfg Sum of Binary Tree
+
+class Solution {
+    // Function to return sum of all nodes of a binary tree
+    static int sumBT(Node root) {
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(root);
+        int sum = 0;
+        while(!queue.isEmpty()){
+            int size = queue.size();
+            for(int i = 0; i < size; i++){
+                Node data = queue.poll();
+                sum = sum + data.data;
+                if(data.left != null) queue.offer(data.left);
+                if(data.right != null) queue.offer(data.right);
+            }
+        }
+        return sum;
+    }
+}
