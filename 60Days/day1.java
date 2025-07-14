@@ -269,3 +269,23 @@ class Solution {
         return leaves;
     }
 }
+
+gfg Count Non-Leaf Nodes in Tree
+
+class Solution {
+    int countNonLeafNodes(Node root) {
+       Queue<Node> queue = new LinkedList<>();
+       queue.offer(root);
+       int count = 0;
+       while(!queue.isEmpty()){
+           int size = queue.size();
+           for(int i = 0; i < size; i++){
+               Node n = queue.poll();
+               if(n.left != null || n.right!= null) count++;
+               if(n.left != null) queue.offer(n.left);
+               if(n.right != null) queue.offer(n.right);
+           }
+       }
+        return count;
+    }
+}
