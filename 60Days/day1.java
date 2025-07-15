@@ -359,3 +359,25 @@ class Solution {
         return list;
     }
 }
+
+gfg Largest value in each level
+
+class Solution {
+    public ArrayList<Integer> largestValues(Node root) {
+        Queue<Node> q = new LinkedList<>();
+        ArrayList<Integer> list = new ArrayList<>();
+        q.offer(root);
+        while(!q.isEmpty()){
+        int maxi = Integer.MIN_VALUE;
+            int size = q.size();
+            for(int i = 0; i < size; i++){
+                Node n = q.poll();
+                maxi = Math.max(n.data, maxi);
+                if(n.left != null) q.offer(n.left);
+                if(n.right != null) q.offer(n.right);
+            }
+                list.add(maxi);
+        }
+        return list;
+    }
+}
