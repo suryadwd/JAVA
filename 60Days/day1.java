@@ -332,3 +332,30 @@ public static int maxValue(Node root){
             return maxi;
     }
 }
+
+
+gfg Nodes at Odd Levels
+
+
+class Solution {
+    public ArrayList<Integer> nodesAtOddLevels(Node root) {
+        ArrayList<Integer> list = new ArrayList<>();
+        Queue<Node> q = new LinkedList<>();
+        q.offer(root);
+        if(root == null) return list;
+        boolean oddlvl = true;
+        while(!q.isEmpty()){
+            int size = q.size();
+            for(int i = 0; i < size; i++){
+                Node n = q.poll();
+                if(oddlvl){
+                list.add(n.data);
+               }
+               if(n.left != null) q.offer(n.left);
+               if(n.right != null) q.offer(n.right);
+            }
+            oddlvl = !oddlvl;
+        }
+        return list;
+    }
+}
