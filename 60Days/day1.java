@@ -445,3 +445,25 @@ class Tree {
         inorder(root.right, arr);
     }
 }
+
+gfg floor in bst
+
+// User function Template for Java
+
+class Solution {
+    public static int floor(Node root, int x) {
+        List<Integer> arr = new ArrayList<>();
+        inorder(root, arr);
+        int size = arr.size();
+        for(int i = size - 1; i >= 0; i--){
+        if(arr.get(i) <= x) return arr.get(i);
+        }
+        return -1;
+    }
+    public static void inorder(Node root, List<Integer> arr){
+        if(root == null) return;
+        inorder(root.left, arr);
+        arr.add(root.data);
+        inorder(root.right, arr);
+    }
+}
