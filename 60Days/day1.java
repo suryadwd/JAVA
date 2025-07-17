@@ -424,3 +424,24 @@ class Tree {
         inorder(root.right, arr);
     }
 }
+
+gfg Ceil in BST
+
+class Tree {
+    int findCeil(Node root, int key) {
+        List<Integer> arr = new ArrayList<>();
+        inorder(root, arr);
+        for(int i = 0; i < arr.size(); i++){
+            if(arr.get(i) >= key)
+            return arr.get(i);
+        }
+        return -1;
+    }
+    
+    public static void inorder(Node root, List<Integer>arr){
+        if(root == null) return;
+        inorder(root.left, arr);
+        arr.add(root.data);
+        inorder(root.right, arr);
+    }
+}
