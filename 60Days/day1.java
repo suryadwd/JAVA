@@ -467,3 +467,41 @@ class Solution {
         inorder(root.right, arr);
     }
 }
+
+gfg Find Common Nodes in two BSTs
+
+class Solution {
+    // Function to find the nodes that are common in both BST.
+    public static ArrayList<Integer> findCommon(Node r1, Node r2) {
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        ArrayList<Integer> common = new ArrayList<>();
+        
+        inorder(r1, list1);
+        inorder(r2, list2);
+        int i = 0, j = 0;
+          while (i < list1.size() && j < list2.size()) {
+            int val1 = list1.get(i);
+            int val2 = list2.get(j);
+            if (val1 == val2) {
+                common.add(val1);
+                i++;
+                j++;
+            } else if (val1 < val2) {
+                i++;
+            } else {
+                j++;
+            }
+        }
+
+        return common;
+    }
+        
+    
+    public static void inorder(Node root, ArrayList<Integer> list){
+        if(root == null) return ;
+        inorder(root.left, list);
+        list.add(root.data);
+        inorder(root.right, list);
+    }
+}
