@@ -403,3 +403,24 @@ class Solution {
     return root.data;
     }
 }
+
+ggf median 
+
+class Tree {
+    public static float findMedian(Node root) {
+        List<Integer> arr = new ArrayList<>();
+        inorder(root, arr);
+        int size = arr.size();
+        if(size % 2 != 0) {
+            return arr.get(size / 2);
+        }else{
+            return (float)(arr.get(size / 2 - 1) + arr.get(size / 2)) / 2;
+        }
+    }
+    public static void inorder(Node root, List<Integer>arr){
+        if(root == null) return;
+        inorder(root.left, arr);
+        arr.add(root.data);
+        inorder(root.right, arr);
+    }
+}
