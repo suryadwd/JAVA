@@ -392,3 +392,14 @@ class Solution {
         else return  searchBST(root.right, val);
     }
 }
+
+gfg minmimum lelement in bst
+
+class Solution {
+    int minValue(Node root) {
+    while (root.left != null) {
+        root = root.left;
+    }
+    return root.data;
+    }
+}
