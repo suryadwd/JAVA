@@ -519,3 +519,18 @@ class Solution {
         return minHeap.peek();
     }
 }
+
+
+gfg hright of heap 
+
+class Solution {
+    static int heapHeight(int n, int arr[]) {
+        if(n == 1) return 1;
+        int ans = 0;
+        while(n > 1){
+            ans ++;
+            n = n / 2;
+        }
+        return ans;
+    }
+}
