@@ -87,6 +87,7 @@ class Solution {
             int size = queue.size();
             for(int i = 0; i < size; i++){
                 TreeNode data = queue.poll();
+
                 // list.add(data.val);
                 if(data.left != null) queue.offer(data.left);
                 if(data.right !=  null) queue.offer(data.right);
@@ -534,3 +535,19 @@ class Solution {
         return ans;
     }
 }
+
+leetcode 704  binary search
+
+class Solution {
+    public int search(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
+        while(left <= right){
+            int mid = left + (right - left)/2;
+            if(nums[mid] == target) return mid;
+            else if(nums[mid] > target) right = mid - 1;
+            else left = mid + 1;
+        }
+        return -1;
+    }
+}
+
