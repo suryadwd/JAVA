@@ -551,3 +551,20 @@ class Solution {
     }
 }
 
+leetcode 704  binary search using recursion
+
+class Solution {
+    public int search(int[] nums, int target) {
+       return rec(nums, target, 0, nums.length - 1);
+    }
+
+    public static int  rec(int nums[], int target, int left, int right){
+        while(left <= right){
+        int mid = left + (right - left)/2;
+        if(nums[mid] == target) return mid;
+        else if(nums[mid] > target) return rec(nums, target, left, mid - 1);
+        else return rec(nums,target, mid + 1, right);
+        }
+        return -1;
+    }
+}
