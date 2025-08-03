@@ -1,11 +1,13 @@
 package August;
 import java.util.*;
 public class Main {
+
+  static int rev = 0;
+
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int a = sc.nextInt();
-    System.out.println("Sum: "+digitSum(a));
-    System.out.println("Multiply: "+digitMul(a));
+    System.out.println(digitReverse(a));
     sc.close();
   }
 
@@ -20,5 +22,13 @@ public class Main {
    int digit = n % 10;
    return digit * digitMul(n/10); 
   }
+
+  public static int digitReverse(int n) {
+    if (n == 0) return rev;
+    int digit = n % 10;
+    rev = rev * 10 + digit;
+    return digitReverse(n / 10);
+  }
+
 
 }
