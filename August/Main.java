@@ -7,7 +7,7 @@ public class Main {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int a = sc.nextInt();
-    System.out.println(checkPalindrome(a));
+    System.out.println(countZero(a));
     sc.close();
   }
 
@@ -40,6 +40,17 @@ public class Main {
       check = check/10;
     }
     return rev == n;
+  }
+
+  public static int countZero(int n) {
+   int ans = 0;
+   int temp = n;
+   while(temp != 0) {
+    int digit = temp%10;
+    if(digit == 0) ans++;
+    temp /= 10;
+   }
+   return ans;
   }
 
 }
