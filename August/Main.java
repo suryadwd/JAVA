@@ -7,7 +7,8 @@ public class Main {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int a = sc.nextInt();
-    System.out.println(countZero(a));
+    // System.out.println(recursion(a))
+    recursion(a);
     sc.close();
   }
 
@@ -30,7 +31,6 @@ public class Main {
     return digitReverse(n / 10);
   }
 
-
   public static boolean checkPalindrome(int n) {
     int check = n;
     int rev = 0;
@@ -52,5 +52,20 @@ public class Main {
    }
    return ans;
   }
+ 
+  static int ans = 0;
+
+  public static int recursiveCountZero(int n) {
+    if(n == 0) return ans;
+    int digit = n % 10;
+    if(digit == 0) ans++;
+    return recursiveCountZero(n/10);
+  }
+
+  public static void recursion(int n){
+    if(n==0) return;
+    System.out.print(n+" ");
+    recursion(n-1);
+}
 
 }
