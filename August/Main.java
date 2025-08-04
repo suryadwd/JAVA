@@ -7,8 +7,8 @@ public class Main {
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     int a = sc.nextInt();
-    // System.out.println(recursion(a))
-    recursion(a);
+    System.out.println(fibo(a));
+    // recursion(a);
     sc.close();
   }
 
@@ -66,6 +66,11 @@ public class Main {
     if(n==0) return;
     System.out.print(n+" ");
     recursion(n-1);
-}
+  }
+
+  public static int fibo(int n){
+    if (n < 2) return n;
+    return fibo(n-1) + fibo(n-2);
+  }
 
 }
