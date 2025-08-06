@@ -584,3 +584,21 @@ class Solution {
     }
 }
 
+gfg conunt numer of zero in Array
+
+// User function Template for Java
+
+class Solution {
+    
+    public int helper(int arr[], int count, int itr){
+        if(itr >= arr.length) return count;
+        if(arr[itr] == 0) count++;
+        return helper(arr, count, itr +1);
+    }
+    
+    int countZeroes(int[] arr) {
+        return helper(arr, 0, 0);
+    }
+}
+
+
