@@ -568,3 +568,19 @@ class Solution {
         return -1;
     }
 }
+
+
+leetcode 7 reverse number
+
+class Solution {
+    public static int helper(int x, int rev){
+        if(x == 0) return rev;
+        if(rev > Integer.MAX_VALUE/10 || rev < Integer.MIN_VALUE/10) return 0;
+        rev = rev*10 + x % 10;
+        return helper(x/10, rev);
+    }
+    public int reverse(int x) {
+        return helper(x, 0);
+    }
+}
+
