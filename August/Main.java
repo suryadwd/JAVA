@@ -147,4 +147,17 @@ class Solution {
     }
 }
 
+leetcode 2089 (iterative)
+class Solution {
+    public List<Integer> targetIndices(int[] nums, int target) {
+        List<Integer> ans = new ArrayList<>();
+        Arrays.sort(nums);
+        int idx = 0;
+        for(int i: nums){
+            if(i == target) ans.add(idx);
+            idx++;
+        }
+        return ans;
+    }
+}
 }
