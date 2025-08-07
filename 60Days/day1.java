@@ -551,54 +551,5 @@ class Solution {
     }
 }
 
-leetcode 704  binary search using recursion
-
-class Solution {
-    public int search(int[] nums, int target) {
-       return rec(nums, target, 0, nums.length - 1);
-    }
-
-    public static int  rec(int nums[], int target, int left, int right){
-        while(left <= right){
-        int mid = left + (right - left)/2;
-        if(nums[mid] == target) return mid;
-        else if(nums[mid] > target) return rec(nums, target, left, mid - 1);
-        else return rec(nums,target, mid + 1, right);
-        }
-        return -1;
-    }
-}
-
-
-leetcode 7 reverse number
-
-class Solution {
-    public static int helper(int x, int rev){
-        if(x == 0) return rev;
-        if(rev > Integer.MAX_VALUE/10 || rev < Integer.MIN_VALUE/10) return 0;
-        rev = rev*10 + x % 10;
-        return helper(x/10, rev);
-    }
-    public int reverse(int x) {
-        return helper(x, 0);
-    }
-}
-
-gfg conunt numer of zero in Array
-
-// User function Template for Java
-
-class Solution {
-    
-    public int helper(int arr[], int count, int itr){
-        if(itr >= arr.length) return count;
-        if(arr[itr] == 0) count++;
-        return helper(arr, count, itr +1);
-    }
-    
-    int countZeroes(int[] arr) {
-        return helper(arr, 0, 0);
-    }
-}
 
 

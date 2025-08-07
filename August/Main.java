@@ -6,10 +6,11 @@ public class Main {
 
   public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
-    int a = sc.nextInt();
-    System.out.println(fibo(a));
-    // recursion(a);
-    sc.close();
+    // int a = sc.nextInt();
+    // System.out.println(fibo(a));
+    // // recursion(a);
+    // sc.close();
+    
   }
 
   public static int digitSum(int n){
@@ -72,5 +73,78 @@ public class Main {
     if (n < 2) return n;
     return fibo(n-1) + fibo(n-2);
   }
+
+
+leetcode 7 reverse number
+
+class Solution {
+    public static int helper(int x, int rev){
+        if(x == 0) return rev;
+        if(rev > Integer.MAX_VALUE/10 || rev < Integer.MIN_VALUE/10) return 0;
+        rev = rev*10 + x % 10;
+        return helper(x/10, rev);
+    }
+    public int reverse(int x) {
+        return helper(x, 0);
+    }
+}
+
+gfg conunt numer of zero in Array
+
+(recursion)
+class Solution {
+    
+    public int helper(int arr[], int count, int itr){
+        if(itr >= arr.length) return count;
+        if(arr[itr] == 0) count++;
+        return helper(arr, count, itr +1);
+    }
+    
+    int countZeroes(int[] arr) {
+        return helper(arr, 0, 0);
+    }
+}
+
+(iterative)
+int countZeroes(int[] arr) {
+    int start = 0, count = 0;
+    while(start <arr.length){
+        if(arr[start] == 0) count++;
+        start++;
+    }
+    return count;
+}
+
+leetcode 704  binary search using recursion
+
+class Solution {
+    public int search(int[] nums, int target) {
+       return rec(nums, target, 0, nums.length - 1);
+    }
+
+    public static int  rec(int nums[], int target, int left, int right){
+        while(left <= right){
+        int mid = left + (right - left)/2;
+        if(nums[mid] == target) return mid;
+        else if(nums[mid] > target) return rec(nums, target, left, mid - 1);
+        else return rec(nums,target, mid + 1, right);
+        }
+        return -1;
+    }
+}
+
+leetcode 2089(recursion)
+class Solution {
+    public List<Integer> targetIndices(int[] nums, int target) {
+        List<Integer> ans = new ArrayList<>();
+        Arrays.sort(nums);
+        return helper(nums, target, ans,  0);
+    }
+    public List<Integer> helper(int nums[], int target, List<Integer> ans, int i){
+        if(i == nums.length ) return ans;
+        if(nums[i] == target) ans.add(i);
+        return helper(nums, target, ans, i + 1);
+    }
+}
 
 }
