@@ -213,23 +213,36 @@
 // }
 
 
+// class Main {
+// 	public static void main(String[] args) {
+//         int arr [] = {1,2,3,4,5};
+//         int i = arr.length - 1, j = 0;
+// 		rev(arr, j, i);
+//         System.out.println();
+//         for(int x : arr)System.out.print(x +" ");
+//         System.out.println();
+// 	}
+// 	public static void rev(int arr[], int j, int i) {
+// 		if(j >= i) return;
+//         swaps(arr, j, i);
+//         rev(arr, j+1, i-1);
+// 	}
+//     public static void swaps(int arr[], int j, int i){
+//         int temp = arr[j];
+//         arr[j] = arr[i];
+//         arr[i] = temp;
+//     }
+// }
+
 class Main {
 	public static void main(String[] args) {
-        int arr [] = {1,2,3,4,5};
-        int i = arr.length - 1, j = 0;
-		rev(arr, j, i);
-        System.out.println();
-        for(int x : arr)System.out.print(x +" ");
-        System.out.println();
+        String s = "12321u";
+        char arr[] = s.toCharArray();
+		System.out.println(checkPalindrome(arr, 0, arr.length - 1));
 	}
-	public static void rev(int arr[], int j, int i) {
-		if(j >= i) return;
-        swaps(arr, j, i);
-        rev(arr, j+1, i-1);
+	public static boolean checkPalindrome(char arr[], int i, int j) {
+        if( i >= j ) return true;
+        if( arr[i] != arr[j] ) return false;
+        return checkPalindrome(arr, i+1, j-1);
 	}
-    public static void swaps(int arr[], int j, int i){
-        int temp = arr[j];
-        arr[j] = arr[i];
-        arr[i] = temp;
-    }
 }
