@@ -234,15 +234,62 @@
 //     }
 // }
 
-class Main {
-	public static void main(String[] args) {
-        String s = "12321u";
-        char arr[] = s.toCharArray();
-		System.out.println(checkPalindrome(arr, 0, arr.length - 1));
-	}
-	public static boolean checkPalindrome(char arr[], int i, int j) {
-        if( i >= j ) return true;
-        if( arr[i] != arr[j] ) return false;
-        return checkPalindrome(arr, i+1, j-1);
-	}
+// class Main {
+// 	public static void main(String[] args) {
+//         String s = "12321u";
+//         char arr[] = s.toCharArray();
+// 		System.out.println(checkPalindrome(arr, 0, arr.length - 1));
+// 	}
+// 	public static boolean checkPalindrome(char arr[], int i, int j) {
+//         if( i >= j ) return true;
+//         if( arr[i] != arr[j] ) return false;
+//         return checkPalindrome(arr, i+1, j-1);
+// 	}
+// }
+
+
+class Main{
+        public static void main(String[] args) {
+                int arr[] = {66,322,-5,10,35,97,18,4,7};
+                mergeSort(arr,0,arr.length - 1);
+                for(int x : arr) System.out.print(x+" ");
+                System.out.println();
+        }
+
+        public static void mergeSort(int arr[], int start, int end){
+                int mid = (start + end) / 2;
+                if(start >= end) return;
+                mergeSort(arr,start,mid);  // left divide
+                mergeSort(arr,mid+1, end); // right divide
+
+                merge(arr,start,end,mid);  // combining each block of arr i.e. elements
+        }
+        
+        public static void merge(int arr[], int start, int end, int mid){
+                int temp[] = new int[end - start + 1];
+                int left = start, right = mid + 1, idx = 0;
+
+        while (left <= mid && right <= end) {
+                if(arr[left] <= arr[right]){
+                        temp[idx++] = arr[left++];
+                }else {
+                        temp[idx++] = arr[right++];
+                }
+        }
+
+        while(left <= mid){
+                temp[idx++] = arr[left++];
+        }
+
+        while(right <= end){
+                temp[idx++] = arr[right++];
+        }
+        // adding each element to ansew
+
+        idx = 0;
+        while (start <= end) {
+                arr[start++] = temp[idx++];
+        }
+
+        }
 }
