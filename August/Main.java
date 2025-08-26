@@ -337,19 +337,37 @@
 //         }
 // }
 
-// SKIP A STRING
+
+        // SKIP A STRING
+
+// class Main{
+//         public static void main(String[] args) {
+//                 String s = "AnujDwivediKaBhaiHuMai";
+//                 System.out.println(SkipString(s,0));
+//         }
+//         static String SkipString(String s, int i){
+//               if(i >= s.length())   return "";
+//               if(i+7 <= s.length() && s.startsWith("Dwivedi",i)){
+//                 return SkipString(s, i+7);
+//               }else return s.charAt(i) + SkipString(s, i+1);
+
+//         }
+// }
 
 
-class Main{
-        public static void main(String[] args) {
-                String s = "AnujDwivediKaBhaiHuMai";
-                System.out.println(SkipString(s,0));
-        }
-        static String SkipString(String s, int i){
-              if(i >= s.length())   return "";
-              if(i+7 <= s.length() && s.startsWith("Dwivedi",i)){
-                return SkipString(s, i+7);
-              }else return s.charAt(i) + SkipString(s, i+1);
-
-        }
+        // GET ALL SUBSEQUENCE 
+class Main {
+         public static void main(String[] args) {
+                String str = "abc";
+                substr("", str);
+         }
+         static void substr(String p, String up){
+                if(up.isEmpty()){
+                        System.out.println(p);
+                        return;
+                }
+                char c = up.charAt(0);
+                substr(p + c, up.substring(1)); // add
+                substr(p , up.substring(1));
+         }
 }
