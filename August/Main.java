@@ -317,22 +317,39 @@
 //         }
 // }
 
+// SKIP A CHARACTER
+
+// class Main{
+//         public static void main(String[] args) {
+//                 String s = "anujdwdhumai";
+//                 helper(s);
+//         }
+//         public static void helper(String s) {
+//                 char[] c = s.toCharArray();
+//                 StringBuilder ans = new StringBuilder();
+//                 System.out.println(aremove(c, 0, ans));
+//         }
+
+//         public static StringBuilder aremove(char[] s, int i, StringBuilder ans){
+//                 if( i == s.length) return ans;
+//                 if(s[i] != 'a') ans.append(s[i]);
+//                 return aremove(s, i+1, ans);
+//         }
+// }
+
+// SKIP A STRING
 
 
 class Main{
         public static void main(String[] args) {
-                String s = "anuj";
-                helper(s);
+                String s = "AnujDwivediKaBhaiHuMai";
+                System.out.println(SkipString(s,0));
         }
-        public static void helper(String s) {
-                char[] c = s.toCharArray();
-                StringBuilder ans = new StringBuilder();
-                System.out.println(aremove(c, 0, ans));
-        }
+        static String SkipString(String s, int i){
+              if(i >= s.length())   return "";
+              if(i+7 <= s.length() && s.startsWith("Dwivedi",i)){
+                return SkipString(s, i+7);
+              }else return s.charAt(i) + SkipString(s, i+1);
 
-        public static StringBuilder aremove(char[] s, int i, StringBuilder ans){
-                if( i == s.length) return ans;
-                if(s[i] != 'a') ans.append(s[i]);
-                return aremove(s, i+1, ans);
         }
 }
