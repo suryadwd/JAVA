@@ -248,48 +248,91 @@
 // }
 
 
+// class Main{
+//         public static void main(String[] args) {
+//                 int arr[] = {66,322,-5,10,35,97,18,4,7};
+//                 mergeSort(arr,0,arr.length - 1);
+//                 for(int x : arr) System.out.print(x+" ");
+//                 System.out.println();
+//         }
+
+//         public static void mergeSort(int arr[], int start, int end){
+//                 int mid = (start + end) / 2;
+//                 if(start >= end) return;
+//                 mergeSort(arr,start,mid);  // left divide
+//                 mergeSort(arr,mid+1, end); // right divide
+
+//                 merge(arr,start,end,mid);  // combining each block of arr i.e. elements
+//         }
+        
+//         public static void merge(int arr[], int start, int end, int mid){
+//                 int temp[] = new int[end - start + 1];
+//                 int left = start, right = mid + 1, idx = 0;
+
+//         while (left <= mid && right <= end) {
+//                 if(arr[left] <= arr[right]){
+//                         temp[idx++] = arr[left++];
+//                 }else {
+//                         temp[idx++] = arr[right++];
+//                 }
+//         }
+
+//         while(left <= mid){
+//                 temp[idx++] = arr[left++];
+//         }
+
+//         while(right <= end){
+//                 temp[idx++] = arr[right++];
+//         }
+//         // adding each element to ansew
+
+//         idx = 0;
+//         while (start <= end) {
+//                arr[start++] = temp[idx++];
+//        }
+//         }
+// }
+
+
+// class Main{
+//         public static void main(String[] args) {
+//                 int arr[] = {10,4,2,65,34,7};
+//                 quickSort(arr, 0, arr.length - 1);
+//                 for(int x: arr) System.out.print(x+" ");
+//         }
+//         public void quickSort(int []arr, int start, int end){
+//                 if(start >= end) return;
+//                 int s = start;
+//                 int e = end;
+//                 int mid = s + (e - s)/2;
+//                 int pivot = arr[mid];
+//                 while (s <= e) {
+//                         while (arr[s] < pivot) {
+//                                 s++;
+//                         }
+//                         while (arr[s] > pivot) {
+//                                 e++;
+//                         }
+//                 }
+//         }
+// }
+
+
+
 class Main{
         public static void main(String[] args) {
-                int arr[] = {66,322,-5,10,35,97,18,4,7};
-                mergeSort(arr,0,arr.length - 1);
-                for(int x : arr) System.out.print(x+" ");
-                System.out.println();
+                String s = "anuj";
+                helper(s);
+        }
+        public static void helper(String s) {
+                char[] c = s.toCharArray();
+                StringBuilder ans = new StringBuilder();
+                System.out.println(aremove(c, 0, ans));
         }
 
-        public static void mergeSort(int arr[], int start, int end){
-                int mid = (start + end) / 2;
-                if(start >= end) return;
-                mergeSort(arr,start,mid);  // left divide
-                mergeSort(arr,mid+1, end); // right divide
-
-                merge(arr,start,end,mid);  // combining each block of arr i.e. elements
-        }
-        
-        public static void merge(int arr[], int start, int end, int mid){
-                int temp[] = new int[end - start + 1];
-                int left = start, right = mid + 1, idx = 0;
-
-        while (left <= mid && right <= end) {
-                if(arr[left] <= arr[right]){
-                        temp[idx++] = arr[left++];
-                }else {
-                        temp[idx++] = arr[right++];
-                }
-        }
-
-        while(left <= mid){
-                temp[idx++] = arr[left++];
-        }
-
-        while(right <= end){
-                temp[idx++] = arr[right++];
-        }
-        // adding each element to ansew
-
-        idx = 0;
-        while (start <= end) {
-                arr[start++] = temp[idx++];
-        }
-
+        public static StringBuilder aremove(char[] s, int i, StringBuilder ans){
+                if( i == s.length) return ans;
+                if(s[i] != 'a') ans.append(s[i]);
+                return aremove(s, i+1, ans);
         }
 }
