@@ -356,18 +356,46 @@
 
 
         // GET ALL SUBSEQUENCE 
-class Main {
-         public static void main(String[] args) {
-                String str = "abc";
-                substr("", str);
-         }
-         static void substr(String p, String up){
-                if(up.isEmpty()){
-                        System.out.println(p);
-                        return;
-                }
-                char c = up.charAt(0);
-                substr(p + c, up.substring(1)); // add
-                substr(p , up.substring(1));
-         }
+
+// class Main {
+//          public static void main(String[] args) {
+//                 String str = "abc";
+//                 substr("", str);
+//          }
+//          static void substr(String p, String up){
+//                 if(up.isEmpty()){
+//                         System.out.println(p);
+//                         return;
+//                 }
+//                 char c = up.charAt(0);
+//                 substr(p + c, up.substring(1)); // add
+//                 substr(p , up.substring(1));
+//          }
+// }
+
+// class Main{
+//         public static void main(String[] args) {
+//                 char c = 'a';
+//                 System.out.println(c+0);
+//         }
+// }
+
+
+class Main{
+        public static void main(String[] args) {
+                print1toN(5);
+                System.out.println();
+                printNto1(5);
+                System.out.println();
+        }
+        static void print1toN(int n){
+                if(n <= 0) return;
+                print1toN(n-1);
+                System.out.print(n+" ");
+        }
+        static void printNto1(int n){
+                if(n <= 0) return;
+                System.out.print(n+" ");
+                print1toN(n-1);
+        }
 }
