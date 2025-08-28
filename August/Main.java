@@ -380,13 +380,19 @@
 //         }
 // }
 
+// PW
 
 class Main{
         public static void main(String[] args) {
-                print1toN(5);
-                System.out.println();
-                printNto1(5);
-                System.out.println();
+                // print1toN(5);
+                // System.out.println();
+                // printNto1(5);
+                // System.out.println();
+                // System.out.println( sum1toN(5));
+                // System.out.println(power(3, 2));
+                // System.out.println(powerRec(3, 2));
+                // System.out.println(NthFib(3));
+                System.out.println(removeA("","anujaja"));
         }
         static void print1toN(int n){
                 if(n <= 0) return;
@@ -397,5 +403,45 @@ class Main{
                 if(n <= 0) return;
                 System.out.print(n+" ");
                 print1toN(n-1);
+        }
+        
+        static int sum1toNPara(int n, int ans){
+                if(n <= 0) return ans;
+                return sum1toNPara(n-1, ans + n);
+        }
+
+        static int sum1toN(int n){
+                if(n == 1) return 1;
+                //sum(n) = n + n-1 + n-2 + . . . + 3 + 2 + 1
+                //sum(n) = n + sum(n-1)
+                //sum(n-1) = n-1 + n-2 + n-3 + . . . 2 + 1
+                //sum(n-1) = n-1 + sum(n-2);
+                return n + sum1toN(n-1);
+        }
+
+        static int power(int a, int b){
+                int ans = 1;
+                for(int i = 0; i < b; i++){
+                        ans  = ans * a;
+                }
+                return ans;
+        }
+
+        static int powerRec(int a, int b){
+                if(b == 0) return 1;
+                if (b == 1) return a;
+                return a * power(a, b-1);
+        }
+
+        static int NthFib(int n){
+                if(n == 1 || n == 0) return n;
+                return NthFib(n-1) + NthFib(n-2);
+        }
+
+        static String removeA(String p, String up){
+                if(up.isEmpty()) return p;
+                char c = up.charAt(0);
+                if(c != 'a') return removeA(p+c, up.substring(1));
+                return removeA(p, up.substring(1));
         }
 }
