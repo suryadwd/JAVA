@@ -396,7 +396,10 @@ class Main{
                 // System.out.println(removeApple("","anujappleChor"));
                 // subSequencePattern("","xyz");
                 // sequence("","xyz");
-                System.out.println(stairPath(5));
+                // System.out.println(stairPath(5));
+                // System.out.println(RatInMazePathCount(3,3));
+                RatInMazePathPattern("",3,3);
+                
         }
         static void print1toN(int n){
                 if(n <= 0) return;
@@ -466,10 +469,24 @@ class Main{
                 sequence(p+c, up.substring(1));
                 sequence(p, up.substring(1));
         }
-
         static int stairPath(int n){
                  if(n <= 2) return n;
                  return stairPath(n-1) + stairPath(n-2);
         }
+        static int RatInMazePathCount(int r, int c){
+                if(r == 1 || c == 1) return 1;
+                int left = RatInMazePathCount(r-1, c);  // goes down
+                int right = RatInMazePathCount(r, c-1); // goes right
+                return left+right;
+        }
+        static void RatInMazePathPattern(String p, int r, int c){
+                if(r == 1 && c == 1) {
+                        System.out.println(p);
+                        return;
+                }
+               if(r > 1) RatInMazePathPattern(p+'R', r-1, c);
+               if(c > 1) RatInMazePathPattern(p+'D', r, c-1);
+        }
+
 
 }
