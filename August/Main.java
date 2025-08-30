@@ -406,7 +406,8 @@ class Main{
                 //         {true, true, true}
                 // };
                 // RatInMazeBlocks(maze, "", 0, 0);    
-                maze("", 3, 3);             
+                // maze("", 3, 3);             
+                System.out.println(mazeCnt(3, 3) );  
         }
         static void print1toN(int n){
                 if(n <= 0) return;
@@ -513,14 +514,20 @@ class Main{
                 if(c < maze[0].length - 1) RatInMazeBlocks(maze, p+'V', r, c+1);
                
         } 
-
         static void maze(String p, int r, int c){
-                if(r == 1 && c == 1){
+                if(r == 1 || c == 1){
                         System.out.println(p);
                         return;
                 }
                 if(r > 1) maze(p+'H', r-1, c);
                 if(c > 1) maze(p+'V', r, c-1);
         }
+        static int mazeCnt(int r, int c){
+                if(r == 1 || c == 1)  return 1;
+                int left =  mazeCnt(r-1, c);
+                int right =  mazeCnt(r, c-1);
+                return left + right;
+        }
+        
 
 }
