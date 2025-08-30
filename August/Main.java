@@ -407,7 +407,10 @@ class Main{
                 // };
                 // RatInMazeBlocks(maze, "", 0, 0);    
                 // maze("", 3, 3);             
-                System.out.println(mazeCnt(3, 3) );  
+                // System.out.println(mazeCnt(3, 3) );  
+                // int [] arr = {1,2,3,4,5,6};
+                // printArr(arr, 0); 
+                System.out.println(skipChar("", "suraj"));
         }
         static void print1toN(int n){
                 if(n <= 0) return;
@@ -528,6 +531,22 @@ class Main{
                 int right =  mazeCnt(r, c-1);
                 return left + right;
         }
-        
+        static void printArr(int arr[], int i){
+                if(i >= arr.length) return;
+                System.out.print(arr[i]+" ");
+                printArr(arr, i+1);
+        }
+        static String skipChar(String p, String up){
+                if(up.isEmpty()) return p;
+                char c = up.charAt(0);
+                if(c != 'a') return skipChar(p+c, up.substring(1));
+                else return skipChar(p, up.substring(1));
+        }
+        static String skipChar(String p, String up){
+                if(up.isEmpty()) return p;
+                char c = up.charAt(0);
+                if(c != 'a') return skipChar(p+c, up.substring(1));
+                else return skipChar(p, up.substring(1));
+        }
 
 }
