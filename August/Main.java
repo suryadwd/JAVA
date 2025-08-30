@@ -410,7 +410,8 @@ class Main{
                 // System.out.println(mazeCnt(3, 3) );  
                 // int [] arr = {1,2,3,4,5,6};
                 // printArr(arr, 0); 
-                System.out.println(skipChar("", "suraj"));
+                // System.out.println(skipChar("", "suraj"));
+                System.out.println(skipString("", "surajchorhaikya"));
         }
         static void print1toN(int n){
                 if(n <= 0) return;
@@ -542,11 +543,11 @@ class Main{
                 if(c != 'a') return skipChar(p+c, up.substring(1));
                 else return skipChar(p, up.substring(1));
         }
-        static String skipChar(String p, String up){
+        static String skipString(String p, String up){
                 if(up.isEmpty()) return p;
                 char c = up.charAt(0);
-                if(c != 'a') return skipChar(p+c, up.substring(1));
-                else return skipChar(p, up.substring(1));
+                if(up.startsWith("chor")) return skipString(p, up.substring(4));
+                else return skipString(p+c, up.substring(1));
         }
 
 }
