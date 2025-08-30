@@ -398,8 +398,15 @@ class Main{
                 // sequence("","xyz");
                 // System.out.println(stairPath(5));
                 // System.out.println(RatInMazePathCount(3,3));
-                RatInMazePathPattern("",3,3);
-                
+                // RatInMazePathPattern("",3,3);
+                // RatInMazePathPatternDiagonal("",3,3);
+                // boolean maze[][] = {
+                //         {true, true, true},
+                //         {true, false, true},
+                //         {true, true, true}
+                // };
+                // RatInMazeBlocks(maze, "", 0, 0);    
+                maze("", 3, 3);             
         }
         static void print1toN(int n){
                 if(n <= 0) return;
@@ -487,6 +494,33 @@ class Main{
                if(r > 1) RatInMazePathPattern(p+'R', r-1, c);
                if(c > 1) RatInMazePathPattern(p+'D', r, c-1);
         }
+        static void RatInMazePathPatternDiagonal(String p, int r, int c){
+                if(r == 1 && c == 1) {
+                        System.out.println(p);
+                        return;
+                }
+               if(r > 1) RatInMazePathPatternDiagonal(p+'H', r-1, c);
+               if(c > 1) RatInMazePathPatternDiagonal(p+'V', r, c-1);
+               if( r > 1 && c > 1) RatInMazePathPatternDiagonal(p + "D", r-1, c-1);
+        }
+        static void RatInMazeBlocks(boolean maze[][], String p, int r, int c){
+                if(r == maze.length - 1 && c == maze[0].length - 1) {
+                        System.out.println(p);
+                        return;
+                }
+                if(!maze[r][c]) return;
+                if(r < maze.length - 1) RatInMazeBlocks(maze, p+'H', r+1, c);
+                if(c < maze[0].length - 1) RatInMazeBlocks(maze, p+'V', r, c+1);
+               
+        } 
 
+        static void maze(String p, int r, int c){
+                if(r == 1 && c == 1){
+                        System.out.println(p);
+                        return;
+                }
+                if(r > 1) maze(p+'H', r-1, c);
+                if(c > 1) maze(p+'V', r, c-1);
+        }
 
 }
