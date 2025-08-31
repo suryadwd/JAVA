@@ -411,7 +411,10 @@ class Main{
                 // int [] arr = {1,2,3,4,5,6};
                 // printArr(arr, 0); 
                 // System.out.println(skipChar("", "suraj"));
-                System.out.println(skipString("", "surajchorhaikya"));
+                // System.out.println(skipString("", "surajchorhaikya"));
+                // permutation("", "abc");
+                // System.out.println(gcd(100,80));
+                System.out.println((100 * 80)/gcd(100, 80));
         }
         static void print1toN(int n){
                 if(n <= 0) return;
@@ -549,5 +552,29 @@ class Main{
                 if(up.startsWith("chor")) return skipString(p, up.substring(4));
                 else return skipString(p+c, up.substring(1));
         }
-
+        static void allPair(String p, String up){
+                if(up.isEmpty()){
+                        System.out.println(p);
+                        return ;
+                }
+                char c = up.charAt(0);
+                allPair(p+c, up.substring(1)); //take 
+                allPair(p, up.substring(1)); //not take 
+        }
+        static void permutation(String s, String up){
+                if(up.isEmpty()){
+                        System.out.println(s);
+                        return;
+                }
+                for(int i = 0; i < up.length(); i++){
+                        char c = up.charAt(0);
+                        String left = up.substring(0, i);
+                        String right = up.substring(i+1);
+                        permutation(s+c, left+right);
+                }
+        }
+        static int gcd(int a, int b){
+                if(b == 0) return a;
+                return gcd(b, a%b);
+        }
 }
