@@ -414,7 +414,8 @@ class Main{
                 // System.out.println(skipString("", "surajchorhaikya"));
                 // permutation("", "abc");
                 // System.out.println(gcd(100,80));
-                System.out.println((100 * 80)/gcd(100, 80));
+                // System.out.println((100 * 80)/gcd(100, 80));
+                seq("", "abc");
         }
         static void print1toN(int n){
                 if(n <= 0) return;
@@ -576,5 +577,14 @@ class Main{
         static int gcd(int a, int b){
                 if(b == 0) return a;
                 return gcd(b, a%b);
+        }
+        static void seq(String p, String up){
+                if(up.isEmpty()){
+                        System.out.println(p);
+                        return;
+                }
+                char c = up.charAt(0);
+                seq(p+c, up.substring(1));
+                seq(p, up.substring(1));
         }
 }
